@@ -1,56 +1,41 @@
+let input = document.getElementById('inputBox');
+let buttons = document.querySelectorAll('button');
 let string = "";
-let i = 0
-let buttons = document.querySelectorAll(".button");
-Array.from(buttons).forEach((button) => {
+let solution = "";
+let arr = Array.from(buttons);
+arr.forEach(button => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-            string = 'Answer = ' + eval(string);
-            document.querySelector('input').value = string;
-            string = "";
-            i = 0
-        }
-        else if (e.target.innerHTML == "+/-") {
-            if (i == 0) {
-                if (string.charAt(0) == "-") {
-                    string = "+" + string.substring(1, string.length)
-                    document.querySelector('input').value = string;
-                }
-                else {
-                    string = "+" + string
-                    document.querySelector('input').value = string;
-                }
-                i = 1
+            if (string == "") {
+                solution = input.value;
+                string = "Answer = " + eval(solution);
             }
             else {
-                if (string.charAt(0) == "+") {
-                    string = "-" + string.substring(1, string.length)
-                    document.querySelector('input').value = string;
-                }
-                else {
-                    string = "-" + string
-                    document.querySelector('input').value = string;
-                }
-                i = 0
+                string = "Answer = " + eval(solution);
+                input.value = string;
+                solution = "";
+                string = "";
             }
         }
         else if (e.target.innerHTML == 'AC') {
+            solution = "";
             string = "";
-            document.querySelector('input').value = string;
-            i = 0
+            input.value = string;
         }
         else if (e.target.innerHTML == 'DEL') {
-            string = string.substring(0, string.length - 1)
-            document.querySelector('input').value = string
+            string = string.substring(0, string.length - 1);
+            solution = solution.substring(0, solution.length - 1);
+            input.value = string;
+        }
+        else if (e.target.innerHTML == 'x') {
+            solution = solution + "*";
+            string = string + e.target.innerHTML;
+            input.value = string;
         }
         else {
-            if (e.target.innerHTML == '+' || e.target.innerHTML == '-' || e.target.innerHTML == '/' || e.target.innerHTML == '*') {
-                string = string + ' ' + e.target.innerHTML + ' ';
-                document.querySelector('input').value = string; 
-            }
-            else {
-                string = string + e.target.innerHTML;
-                document.querySelector('input').value = string;
-            }
+            solution += e.target.innerHTML;
+            string += e.target.innerHTML;
+            input.value = string;
         }
     })
 })
