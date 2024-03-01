@@ -8,10 +8,10 @@ arr.forEach(button => {
         if (e.target.innerHTML == '=') {
             if (string == "") {
                 solution = input.value;
-                string = "Answer = " + eval(solution);
+                string = "= " + eval(solution);
             }
             else {
-                string = "Answer = " + eval(solution);
+                string = "= " + eval(solution);
                 input.value = string;
                 solution = "";
                 string = "";
