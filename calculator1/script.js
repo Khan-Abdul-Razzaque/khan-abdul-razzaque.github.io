@@ -6,9 +6,15 @@ let arr = Array.from(buttons);
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-        if (string == "") {
+            if (string == "") {
                 solution = input.value;
+                if (solution.charAt(0) == "=") {
+                    solution = solution.substring(1, solution.length);
+                }
                 string = "= " + eval(solution);
+                input.value = string;
+                solution = "";
+                string = "";
             }
             else {
                 string = "= " + eval(solution);
