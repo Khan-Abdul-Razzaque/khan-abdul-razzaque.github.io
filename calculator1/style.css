@@ -20,27 +20,26 @@ body {
     padding: 20px;  
     margin: 20px 20px 100px 20px;
     border-radius: 16px;
-    /* background: transparent; */
     background-color: #252525;
     box-shadow: 5px -10px 5px rgb(125, 125, 125);
 }
 
-input {
+#inputBox {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: auto hidden;
+    white-space: nowrap;
+    scrollbar-width:none;
     width: 312px;
     height: 50px;
     border: 2px solid green;
-    padding: 24px;
+    padding: 5px 10px;
     margin: 10px 10px 30px 10px;
     background: transparent;
     box-shadow: -5px -5px 5px rgba(14, 162, 11, 0.989);
     font-size: 40px;
-    text-align: right;
     cursor: pointer;
-    color: #ffffff;
-
-}
-
-input::placeholder {
     color: #ffffff;
 }
 

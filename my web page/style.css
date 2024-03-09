@@ -74,11 +74,11 @@ nav {
     background-color: #666666;
     align-self: center;
     cursor: pointer;
-    transition: transform 1s ease;
+    transition: transform 0.3s ease;
 }
 
 .my-profile:hover {
-    transform: translateX(500px);
+    transform: translateX(300px);
 }
 
 .my-profile h1 {
@@ -145,7 +145,6 @@ footer {
     width: 80%;
     margin-top: 30px;
     padding: 10px;
-    /* border: 2px solid black; */
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
@@ -153,7 +152,6 @@ footer {
 
 .box {
     flex-direction: column;
-    /* border: 2px solid black; */
     padding: 20px;
 }
 
@@ -172,11 +170,12 @@ footer {
 }
 
 table tr:nth-child(4) td {
-    text-align: center;
+    text-align: end;
     padding-top: 20px;
 }
 
 table tr td input {
-    border: 1px solid red;
     border-radius: 5px;
+    height: 25px;
+    padding: 5px;
 }

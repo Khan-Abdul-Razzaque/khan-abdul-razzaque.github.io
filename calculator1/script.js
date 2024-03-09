@@ -6,42 +6,33 @@ let arr = Array.from(buttons);
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-            if (string == "") {
-                solution = input.value;
-                if (solution.charAt(0) == "=") {
-                    solution = solution.substring(1, solution.length);
-                }
-                string = "= " + eval(solution);
-                input.value = string;
-                solution = "";
-                string = "";
-            }
-            else {
-                string = "= " + eval(solution);
-                input.value = string;
-                solution = "";
-                string = "";
-            }
+            string = eval(solution);
+            input.innerHTML = string;
+            solution = "";
+            string = "";
         }
         else if (e.target.innerHTML == 'AC') {
             solution = "";
             string = "";
-            input.value = string;
+            input.innerHTML = "0";
         }
         else if (e.target.innerHTML == 'DEL') {
             string = string.substring(0, string.length - 1);
             solution = solution.substring(0, solution.length - 1);
-            input.value = string;
+            input.innerHTML = string;
+            if (string == "") {
+                input.innerHTML = "0";
+            }
         }
         else if (e.target.innerHTML == 'x') {
             solution = solution + "*";
             string = string + e.target.innerHTML;
-            input.value = string;
+            input.innerHTML = string;
         }
         else {
             solution += e.target.innerHTML;
             string += e.target.innerHTML;
-            input.value = string;
+            input.innerHTML = string;
         }
     })
 })
