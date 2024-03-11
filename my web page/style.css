@@ -102,13 +102,13 @@ nav {
     padding-right: 15px;
     background-color: #666666;
     cursor: pointer;
-    transition: transform 1s ease;
+    transition: transform 1.5s ease;
     grid-row: 1/2;
     grid-column: 1/2;
 }
 
 .my-profile:hover {
-    transform: translateX(752px);
+    transform: translateX(100%);
 }
 
 .my-profile h1 {
