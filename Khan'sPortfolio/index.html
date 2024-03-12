@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan's Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            color: white;
+            background-color: rgb(1, 1, 33);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 80px;
+            margin-bottom: 20px;
+            background-color: rgb(15, 15, 65);
+        }
+
+        .left {
+            font-size: 2rem;
+        }
+
+        .right ul {
+            display: flex;
+        }
+
+        .right ul li {
+            font-size: 1.5rem;
+            list-style: none;
+            margin: 0 25px;
+        }
+
+        .firstSection {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .leftSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            width: 30%;
+            font-size: 2.5rem;
+        }
+
+        .rightSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            width: 30%;
+        }
+
+        .rightSection img {
+            height: 400px;
+        }
+
+        .purple {
+            color: purple;
+        }
+
+        .horizontalLine1 {
+            display: flex;
+            height: 5px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 80px;
+        }
+
+        .horizontalLine1 div {
+            width: 85%;
+            border: 1px solid gray;
+        }
+
+        .right ul a {
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.5s ease;
+        }
+
+        .right ul a:hover {
+            transform: scale(1.3);
+        }
+
+        .secondSection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .horizontalLine2 {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .horizontalLine2 div {
+            width: 90%;
+            border: 2px solid gray;
+        }
+
+        .verticalLine {
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+        }
+
+        .content {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex-direction: column;
+            padding-right: 23px;
+        }
+
+        .content div {
+            align-self: center;
+            height: 60px;
+            border: 2px solid gray;
+        }
+
+        .content p {
+            width: 65%;
+        }
+
+        .content img {
+            height: 40px;
+            align-self: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Khan's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <a href="/"><li>Home</li></a>
+                    <a href="/"><li>About</li></a>
+                    <a href="/"><li>Services</li></a>
+                    <a href="/"><li>Projects</li></a>
+                    <a href="/"><li>Contact Me</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <section class="leftSection">
+                <div>My name is <span class="purple">Khan Abdul Razzaque</span>. I am a passionate Web Designer</div>
+            </section>
+            <section class="rightSection"><img src="developer.png" alt="Image not found">
+            </section>
+        </section>
+        <section class="horizontalLine1">
+            <div></div>
+        </section>
+        <section class="secondSection">
+            <div class="horizontalLine2">
+                <div></div>
+            </div>
+            <div class="verticalLine">
+                <div class="content">
+                    <img src="instagram.png" alt="Image not found">
+                    <div></div>
+                    <p>I have created my Instagram account in (2020). But I haven't posted any video on the Instagram account.</p>
+                </div>
+                <div class="content">
+                    <img src="youtube.png" alt="Image not found">
+                    <div></div>
+                    <p>I had created my youtube account in (2020). But I haven't posted any video on the channel.</p>
+                </div>
+                <div class="content">
+                    <img src="facebook.png" alt="Image not found">
+                    <div></div>
+                    <p>I have created my Facebook account in (2015). I have posted some photos and video on the account.</p>
+                </div>
+                <div class="content">
+                    <img src="twitter.png" alt="Image not found">
+                    <div></div>
+                    <p>I have created my twitter account in (2021). But I have not visited my twitter account yet.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
