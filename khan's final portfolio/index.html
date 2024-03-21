@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan's Final Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 600px) {
+            
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            background-color: rgb(52, 51, 90);
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            display: flex;
+            position: absolute;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(46, 66, 146);
+            transition: transform 0.3s ease-in;
+        }
+
+        .sidebarGo {
+            transform: translateX(-250px);
+        }
+
+        .toggleMechanism {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding-top: 6px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        .menu-come {
+            margin-right: 85px;
+            height: 25px;
+            cursor: pointer;
+        }
+        
+        .menu-close {
+            margin-left: 85px;
+            height: 25px;
+            cursor: pointer;
+            transition: transform 0.5s ease-in;
+        }
+
+        .menu-close:hover {
+            transform: rotate(360deg);
+        }
+
+        .webName {
+            padding-top: 40px;
+            font-size: 28px;
+            text-decoration: underline;
+        }
+
+        .webName strong a {
+            color: black;
+        }
+
+        nav ul {
+            margin-top: 100px;
+        }
+
+        nav ul a {
+            text-decoration: none;
+            color: black;
+        }
+
+        nav ul a li {
+            list-style: none;
+            margin-bottom: 60px;
+            font-size: 25px;
+        }
+
+        .infoContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            height: 70vh;
+            width: 100vw;
+            margin: 100px 80px;
+            /* background-color: rgb(44, 106, 106); */
+        }
+
+        .line1, .line3 {
+            font-size: 20px;
+        }
+
+        .line2 {
+            font-size: 22px;
+        }
+
+        .line2, .line3 {
+            margin-top: 30px;
+        }
+
+        .infoContainer div img {
+            border-radius: 18px;
+            height: 45vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggleMechanism">
+        <img class="menu-come" id="come" src="toggle.png">
+        <img class="menu-close" id="go" src="menu-close.png" alt="">
+    </div>
+    <div class="container">
+        <div class="sidebar sidebarGo">
+            <div class="webName"><strong><a href="https://arkoutlet.freewebhostmost.com/my_web/">Khan's Portfolio</a></strong></div>
+            <nav>
+                <ul>
+                    <a href="/calculator1/index.html"><li>Home</li></a>
+                    <a href="/"><li>About</li></a>
+                    <a href="/"><li>Projects</li></a>
+                    <a href="/"><li>Contact Me</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="infoContainer">
+            <div class="developerInfo">
+                <div class="line1">My name is</div>
+                <div class="line2"><strong>Khan Abdul Razzaque</strong></div>
+                <div class="line3">I am a Web Developer</div>
+            </div>
+            <div class="developerImage">
+                <img src="developer.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
