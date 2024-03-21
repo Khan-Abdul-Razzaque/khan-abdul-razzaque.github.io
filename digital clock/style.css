@@ -51,6 +51,8 @@ body {
     background-color: rgb(255, 255, 255);
     position: absolute;
     border-radius: 5px 5px 2px 2px;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .minute-hand {
@@ -62,6 +64,8 @@ body {
     transition: transform 1s linear;
     position: absolute;
     border-radius: 5px 5px 2px 2px;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .second-hand {
@@ -73,6 +77,8 @@ body {
     transition: transform 1s linear;
     position: absolute;
     border-radius: 5px 5px 2px 2px;
+    box-sizing: border-box;
+    border: 1px solid black;
 }
 
 .center-point {
