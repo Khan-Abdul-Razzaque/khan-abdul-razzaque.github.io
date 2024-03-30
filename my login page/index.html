@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(rgb(124, 156, 177), white);
+            font-family: sans-serif;
+        }
+        
+        .container {
+            height: 450px;
+            width: 800px;
+            border-radius: 35px;
+            background: linear-gradient(rgb(93, 44, 44), rgb(255, 255, 255), rgb(30, 95, 30), rgb(255, 255, 255));
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 0px 10px 5px #5d5d5d;
+            position: relative;
+            animation: loginAnime 1.5s ease-in-out 0s infinite alternate;
+        }
+
+        .section1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 50%;
+            height: 100%;
+            gap: 20px;
+            transition: all 0.3s cubic-bezier(0.88, 0.27, 0.13, 0.72);
+        }
+
+        .section1 h1 {
+            font-size: 30px;
+            font-weight: 1000;
+        }
+        
+        .section1 div {
+            display: flex;
+            gap: 25px;
+        }
+
+        .section1 div span img {
+            height: 40px;
+            border: 3px solid rgb(141, 141, 141);
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .section1 input {
+            background-color: rgb(207, 207, 207);
+            padding: 8px 0;
+            width: 80%;
+            border-radius: 5px;
+            border: none;
+            font-size: 20px;
+            text-indent: 15px;
+        }
+
+        .section1 button {
+            border-radius: 10px;
+            border: none;
+            background-color: rgb(0, 70, 0);
+            color: white;
+            padding: 10px 45px;
+            font-size: 20px;
+        }
+        
+        .section2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 40px;
+            height: 100%;
+            width: 50%;
+            background-color: rgb(0, 70, 0);
+            border-radius: 115px 35px 35px 115px;
+            color: white;
+            text-align: center;
+            gap: 20px;
+            transition: all 0.3s cubic-bezier(0.88, 0.27, 0.13, 0.72);
+        }
+
+        .section2 h1 {
+            font-size: 40px;
+        }
+
+        .section2 button {
+            border-radius: 10px;
+            border: 2px solid gray;
+            background-color: transparent;
+            color: white;
+            padding: 10px 45px;
+            font-size: 20px;
+        }
+
+        .transform {
+            transform: translateX(calc(100% * var(--X)));
+        }
+
+        .cPointer {
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) or (max-height: 450px) {
+            .container {
+                height: 280px;
+                width: 445px;
+            }
+
+            .section1 {
+                gap: 5px;
+            }
+
+            .section1 div {
+                gap: 10px;
+            }
+
+            .section1 input {
+                height: 25px;
+                text-indent: 5px;
+            }
+
+            .section1 p {
+                margin-top: 10px;
+            }
+
+            #btn1 {
+                padding: 7px 15px;
+            }
+            
+            #btn2 {
+                padding: 7px 15px;
+            }
+
+            .section2 {
+                padding: 0 15px;
+                gap: 10px;
+            }
+
+            #heading1 {
+                font-size: 23px;
+                font-weight: 1000;
+            }
+
+            #heading2 {
+                font-size: 23px;
+                font-weight: 1000;
+            }
+        }
+
+        @keyframes loginAnime {
+            from {
+                top: -20px;
+                left: -20px;
+            }
+            to {
+                top: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="section1" style="--X: 1">
+            <h1 id="heading1">Sign In</h1>
+            <div>
+                <span class="cPointer"><img src="logo-google.svg" alt=""></span>
+                <span class="cPointer"><img src="logo-faceook.png" alt=""></span>
+                <span class="cPointer"><img src="logo-github.png" alt=""></span>
+                <span class="cPointer"><img src="logo-linkedin.png" alt=""></span>
+            </div>
+            <p>or use your email password</p>
+            <input  style="display: none;" id="name" type="text" name="name" placeholder="Name">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <p id="para2">Forget Your Password?</p>
+            <button id="btn1" class="cPointer">SIGN IN</button>
+        </section>
+
+        <section class="section2" style="--X: -1">
+            <h1 id="heading2">Hello, Friend!</h1>
+            <p>Register with your personal details to use all of the site features</p>
+            <button id="btn2" class="cPointer">SIGN UP</button>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
