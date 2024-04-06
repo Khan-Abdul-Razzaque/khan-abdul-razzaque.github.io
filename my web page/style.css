@@ -13,6 +13,7 @@ body {
     background-color: rgba(2, 0, 22, 0.926);
     color: rgb(118, 118, 118);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 .display-flex {
@@ -33,6 +34,20 @@ nav {
     background-color: rgb(116, 73, 163);
     color: white;
     justify-content: space-around;
+}
+
+.scroll-status {
+    height: 10px;
+    width: 100vw;
+    background-color: rgba(10, 204, 0, 0.845);
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+    transform-origin: left;
+    animation: scroll-animation linear;
+    animation-timeline: scroll();
+    scale: 0 1;
+    z-index: 100;
 }
 
 .services {
@@ -121,6 +136,7 @@ nav {
     margin-top: 20px;
     margin-left: 20px;
     color: black;
+    color: white;
 }
 
 .my-profile {
@@ -189,6 +205,7 @@ footer {
     padding: 15px;
     flex-direction: column;
     background-color: rgba(24, 121, 0, 0.807);
+    color: black;
 }
 
 .calculators a {
@@ -235,4 +252,10 @@ table tr td input {
     border-radius: 5px;
     height: 25px;
     padding: 5px;
+}
+
+@keyframes scroll-animation {
+    to {
+        scale: 1 1;
+    }
 }
