@@ -8,7 +8,7 @@ async function fetchFolders() {
     let anchorTags = div.getElementsByTagName('a');
     for (const anchorTag of anchorTags) {
         if (anchorTag.href.includes("/songs/")) {
-            folders.push(anchorTag.href);
+            folders.push(anchorTag.href.replace('/spotify%20clone', ''));
         }
     }
     return folders;
@@ -119,12 +119,11 @@ async function driver() {
         let anchorTags = div.getElementsByTagName('a');
         for (const anchorTag of anchorTags) {
             if (anchorTag.href.includes("info.json")) {
-                let songFolder = anchorTag.href.split('/').slice(-2, -1);
-                let infoJson = await fetch(`songs/${songFolder}/info.json`);
+                let infoJson = await fetch(anchorTag.href);
                 let iJResponse = await infoJson.json();
                 let playlistInfo = iJResponse;
                 let folderBox = document.createElement('div');
-                folderBox.innerHTML = `<div style="background: url('songs/${songFolder}/thumbnail.jpg'); background-repeat: no-repeat; background-position: center center; background-size: cover;" class="image flex">
+                folderBox.innerHTML = `<div style="background: url('${anchorTag.href.replace('info.json', 'thumbnail.jpg')}'); background-repeat: no-repeat; background-position: center center; background-size: cover;" class="image flex">
 
                                     </div>
                                     <div class="title">
