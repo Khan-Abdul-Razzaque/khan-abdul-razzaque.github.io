@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scrollbar-color: rgb(134, 134, 134) rgb(171, 171, 171);
+    scrollbar-width: thin;
+}
+
+body {
+    background: rgb(171, 171, 171);
+    user-select: none;
+    overflow: hidden auto;
+}
+
+a {
+    text-decoration: none;
+    color: #5a5a5a;
+}
+
+img {
+    cursor: pointer;
+}
+
+.flex-div {
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    padding: 10px 1.5%;
+    height: 70px;
+    justify-content: space-between;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: rgb(171, 171, 171);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.menu {
+    width: 30px;
+}
+
+.logo .ytb-icon {
+    width: 50px;
+    margin: 0 2px 0 12px;
+}
+
+.logo .ytb-icon-name {
+    font-size: 21px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.nav-right img {
+    width: 30px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.nav-right .user-pic {
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    margin: 0;
+}
+
+
+.search-box {
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid rgb(95, 95, 95);
+    border-radius: 25px;
+    padding: 0 10px 0 20px;
+    margin-right: 13px;
+}
+
+.search-box input {
+    width: 500px;
+    padding: 10px 0;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    background: transparent;
+}
+
+.search-box img {
+    width: 30px;
+}
+
+.nav-middle img {
+    width: 35px;
+}
+
+
+/* ------------- Side Bar -------------- */
+
+.side-bar {
+    width: 235px;
+    height: 100vh;
+    background: rgb(171, 171, 171);
+    position: fixed;
+    top: 0;
+    padding-left: 10px;
+    padding-right: 30px;
+    padding-top: 85px;
+    box-shadow: 0 0 10px 1px rgb(73, 73, 73);
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(134, 134, 134) rgb(171, 171, 171);
+}
+
+.shortcut-links a img {
+    width: 25px;
+    margin-right: 20px;
+}
+
+.shortcut-links a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.shortcut-links a p {
+    font-size: 18px;
+}
+
+.side-bar hr {
+    height: 1px;
+    width: 85%;
+    border: 0;
+    margin-bottom: 20px;
+    background: #7e7e7e;
+}
+
+.subscribed a img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.subscribed a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.hide-side-bar {
+    width: 65px;
+    margin: 0 auto;
+    padding-right: 10px;
+}
+
+.hide-side-bar .subscribed,
+.hide-side-bar hr {
+    display: none;
+}
+
+.hide-side-bar .shortcut-links {
+    margin: auto;
+}
+
+.hide-side-bar .shortcut-links a img {
+    margin: 0;
+}
+
+.hide-side-bar .shortcut-links a .short-name {
+    display: none;
+}
+
+/* ------------- main -------------- */
+
+.container {
+    padding-left: 235px;
+    /* padding-top: 5px; */
+    width: 100%;
+}
+
+.container .tab-list {
+    width: 98%;
+    overflow: auto hidden;
+    text-wrap: nowrap;
+    scrollbar-width: none;
+    padding: 10px 2px;
+    position: sticky;
+    top: 70px;
+    background: rgb(171, 171, 171);
+    margin: auto;
+}
+
+.container .tab-list .tab {
+    padding: 10px 15px;
+    margin-right: 10px;
+    background-color: rgb(160, 160, 160);
+    border-radius: 6px;
+}
+
+.vid-list {
+    margin: auto;
+    margin-top: 10px;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+}
+
+.vid-list .video {
+    width: calc(100% / 5 - 10px);
+}
+
+.vid-list .video .thumbnail {
+    width: 100%;
+    border-radius: 17px;
+}
+
+.video .vid-detail img {
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.video .vid-info {
+    margin-top: 7px;
+    width: calc(100% - 65px);
+}
+
+.video .vid-info p {
+    width: 100%;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    color: rgb(86, 86, 86);
+}
+
+.video .vid-info :first-child {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+
+.increase-container-size {
+    padding-left: 6%;
+}
+
+.increase-container-size .vid-list {
+    margin: auto;
+}

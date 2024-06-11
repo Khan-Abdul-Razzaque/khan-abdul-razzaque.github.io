@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <h1>MyTicTacToe.com</h1>
+    </nav>
+
+    <div class="gameContainer">
+        <div class="container">
+            <h1>Welcome to Tic Tac Toe Game</h1>
+            <div id="alert"></div>
+            <div
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 15px;">
+                <div class="boxes">
+                    <div id="line"></div>
+                    <button class="btn bt-0 bl-0"><span class="boxText"></span></button>
+                    <button class="btn bt-0"><span class="boxText"></span></button>
+                    <button class="btn bt-0 br-0"><span class="boxText"></span></button>
+                    <button class="btn bl-0"><span class="boxText"></span></button>
+                    <button class="btn"><span class="boxText"></span></button>
+                    <button class="btn br-0"><span class="boxText"></span></button>
+                    <button class="btn bl-0 bb-0"><span class="boxText"></span></button>
+                    <button class="btn bb-0"><span class="boxText"></span></button>
+                    <button class="btn br-0 bb-0"><span class="boxText"></span></button>
+                </div>
+                <div id="turn-and-reset-btn">
+                    <span>Turn for X</span>
+                    <button id="reset-btn">reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

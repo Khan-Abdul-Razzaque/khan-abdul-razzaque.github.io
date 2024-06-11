@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.direction-column {
+    flex-direction: column;
+}
+
+.circular-image {
+    border-radius: 50%;
+}
+
+.ellipsis {
+    max-width: 162px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+}

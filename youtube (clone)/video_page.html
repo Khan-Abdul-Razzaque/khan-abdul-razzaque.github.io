@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="video_page_style.css">
+</head>
+
+<body>
+    <div class="youtube-web">
+
+        <!-- ---------------------------- NavBar ---------------------------- -->
+
+        <div class="nav-bar flex align-center space-between">
+            <div class="nav-sec-1 nav-sec flex align-center">
+                <div id="toggleBar" class="image-div flex align-center justify-center"><img
+                        src="ytb images/menu_toggle.svg" alt="toggle bar">
+                </div>
+                <div class="flex align-center"><img id="ytb-logo" src="ytb images/youtube_logo.svg" alt=""></div>
+                <span id="in">IN</span>
+            </div>
+            <div class="nav-sev-2 nav-sec flex align-center">
+                <div class="search flex align-center">
+                    <div class="flex align-center">
+                        <img style="display: none;" src="ytb images/search_icon.svg" alt="search">
+                        <input id="input-box" type="text" placeholder="Search">
+                    </div>
+                    <img src="ytb images/search_icon.svg" alt="search">
+                </div>
+                <div class="image-div flex align-center justify-center"><img src="ytb images/mic_icon.svg" alt=""></div>
+            </div>
+            <div class="nav-sec flex align-center">
+                <div class="image-div flex align-center justify-center"><img src="ytb images/video_call.svg"
+                        alt="video_call">
+                </div>
+                <div class="image-div flex align-center justify-center"><img src="ytb images/notification_bell.svg"
+                        alt="notification"></div>
+                <div style="background-color: gray;" class="image-div flex align-center justify-center">
+                    <div style="font-size: 22px; font-weight: 500;">A</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------- Sidebar ---------------------------- -->
+        
+        <div id="sideBar" class="sidebar vp-sidebar hidden-sidebar">
+            <div class="box">
+                <ul>
+                    <a class="anchor-tag align-center" href="index.html">
+                        <img src="ytb images/home_icon.svg" alt="home">
+                        <li class="flex align-center">Home</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/shorts_icon.svg" alt="shorts">
+                        <li class="flex align-center">Shorts</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/sub_icon.svg" alt="subscription">
+                        <li class="flex align-center">Subscription</li>
+                    </a>
+                    <a id="m_s_item" class="anchor-tag align-center hidden" href="">
+                        <img src="ytb images/you.svg" alt="subscription">
+                        <li class="flex align-center">You</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="anchor-tag flex align-center">You</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/your_channel.svg" alt="your channel">
+                        <li class="flex align-center">Your Channel</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/history.svg" alt="history">
+                        <li class="flex align-center">History</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/playlist.svg" alt="playlist">
+                        <li class="flex align-center">Playlist</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/your_video.svg" alt="your video">
+                        <li class="flex align-center">Your Video</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/watch_later.svg" alt="watch later">
+                        <li class="flex align-center">Watch later</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/licked_video.svg" alt="liked vidoe">
+                        <li class="flex align-center">Liked Video</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">Subscription</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_kNaumymcxYzV7_n7_VRbQ2TRlIbU2w5csOMN0cH8jiED8=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">codeWithHarry</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mwDG5c8dHc3OXHHkfVRAku-f_8WkowUqaRKtPh3upc4pQ=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">अंतरिक्ष TV</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/F6V5Z9COzQuLBJ4T6_YM7va-dL1kTlXfuXZOa3EHOV6F4_Kgum6HFMQtXkUdk_ep1RWMHzOa=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Abu Shahma Samani</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/csBGlsetnliEbfL-gWQVezlCerKTtc0A5pqzWaBMrEwv82DJG1DpnnmUanXWwftkc-XyS-XzYw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">KHAN'S ACADEMY</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/2UCiZ7-jIJf8G26C0ZwehtSBHsmJk4nBr2xLoaNEbUlJ3wDfFpFW0D138j0UDoeqEApat42FhBw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Towards Eternity - اردو हिंदी</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mY2FOEMPxC_yQmfF97aG6gqV-YKiZPZY-mr2ORtLISQw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Nasheed Club</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/PHzVzMQoLajz_4UyC95iwnt0_dPT4v-x0MF9F9g2TFzhs6ab7xMmhyx2ZPtil5bEgab_kRt2gg=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Sbj Classes</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/uG4v6r4O79i7J_rEuo6ASC3kjBq1cbXod0RP3R6lZbk7DFFGVUIULd8DAj4yd4Ea8jQLLFHdVQ=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">WAYOFLIFESQ</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">LifeAda</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/S1hvMUGhao5BvwEV59KHtzeu-Zwv9nXIZPl_dyoPZMike4Ru0cjIKotDH3tVCb8GMdEs0o9Eig=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">M Iqbal rather official</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mpEFtiA2V5L5I4-cBfNfCwOSWwV4z6O_U_wkeg6qHkJIs=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Spoken English Guru</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/8gnENVPHO7vkQgBp4aigKXFyL0NMljWLW2rPhUaCJy-L6NW00sRGybLnNn7eTu5aarf6xg140g=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">ALL - IN - ONE</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_ks343H3Hn6o-j_NgIAIC1bKUC1dYOTPpBBkrkLtBqWlTz6=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Aleena Rais Live</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image" src="" alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Show more</span></li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">Explore</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/trendign.svg" alt="trending">
+                        <li class="flex align-center">Trending</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/shopping.svg" alt="shopping">
+                        <li class="flex align-center">Shopping</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/music.svg" alt="music">
+                        <li class="flex align-center">Music</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/films.svg" alt="films">
+                        <li class="flex align-center">Films</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/live.svg" alt="live">
+                        <li class="flex align-center">Live</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/gaming.svg" alt="gaming">
+                        <li class="flex align-center">Gaming</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/news.svg" alt="news">
+                        <li class="flex align-center">News</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/sports.svg" alt="sport">
+                        <li class="flex align-center">Sport</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/courses.svg" alt="courses">
+                        <li class="flex align-center">Courses</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/fashbea.svg" alt="fashion and beauty">
+                        <li class="flex align-center">Fashion & Beauty</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/podcasts.svg" alt="podcast">
+                        <li class="flex align-center">Podcasts</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">More from YouTube</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_premium.svg" alt="premium">
+                        <li class="flex align-center">YouTube Premium</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_studio.svg" alt="studio">
+                        <li class="flex align-center">YouTube Studio</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_music.svg" alt="music">
+                        <li class="flex align-center">YouTube Music</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_kids.svg" alt="kids">
+                        <li class="flex align-center">YouTube Kids</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/setting.svg" alt="setting">
+                        <li class="flex align-center">Setting</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/report_his.svg" alt="report">
+                        <li class="flex align-center">Report History</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/help.svg" alt="help">
+                        <li class="flex align-center">Help</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/feedback.svg" alt="feedback">
+                        <li class="flex align-center">Send feedback</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box app-details hidden-items">
+                <div>
+                    <span>About</span>
+                    <span>Press</span>
+                    <span>Copyright</span>
+                    <span>Contact us</span>
+                    <span>Creator</span>
+                    <span>Advertise</span>
+                    <span>Developers</span>
+                </div>
+                <div>
+                    <span>Terms</span>
+                    <span>Privacy</span>
+                    <span>Policy & Safety</span>
+                    <span>How YouTube works</span>
+                    <span>Test new features</span>
+                </div>
+                <div>
+                    <span style="color: rgb(83, 83, 83);">&copy; 2024 Google LLC</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="video_page">
+            <div class="flex space-between">
+                <div class="videoContainer">
+                    <div class="videoBox flex">
+                        <video src="ytb videos/video_1.mp4" controls></video>
+                    </div>
+                    <div class="videoTitle">
+                        <span>Animation vs. Physics.mp4</span>
+                    </div>
+                    <div class="videoControls flex align-center space-between">
+                        <div class="leftControls flex align-center">
+                            <div class="flex align-center">
+                                <img
+                                    src="https://yt3.ggpht.com/HufumaSZdJUBiFU1XWxsTs_Jv1z5_rErp08H4NnqXHkae49kuiW6OZMCzOC5XLaMwFKgxSU2_Q=s48-c-k-c0x00ffffff-no-rj">
+                                <div class="flex justify-center direction-column">
+                                    <span class="cName">This channel creates nothing for you</span>
+                                    <span class="subscribers">33K subscribers</span>
+                                </div>
+                            </div>
+                            <div id="subs-btn" class="Controls-btn flex align-center">
+                                <button>Subscribe</button>
+                            </div>
+                        </div>
+                        <div class="rightControls flex">
+                            <div class="Controls-btn flex align-center">
+                                <button class="flex align-center justify-center">
+                                    <img src="ytb images/like.svg" alt="like">
+                                    <span>93K</span>
+                                    <img src="ytb images/dislike.svg" alt="dislike">
+                                </button>
+                            </div>
+                            <div class="Controls-btn flex align-center">
+                                <button class="flex align-center justify-center">
+                                    <img src="ytb images/share.svg" alt="share">
+                                    Share
+                                </button>
+                            </div>
+                            <div class="Controls-btn flex align-center">
+                                <button class="flex align-center justify-center">
+                                    <img src="ytb images/download.svg" alt="download">
+                                    Download
+                                </button>
+                            </div>
+                            <div class="Controls-btn flex align-center">
+                                <button class="flex align-center justify-center">
+                                    <img src="ytb images/clip.svg" alt="clip">
+                                    Clip
+                                </button>
+                            </div>
+                            <div class="Controls-btn flex align-center">
+                                <button class="flex align-center justify-center">
+                                    <img src="ytb images/save.svg" alt="">
+                                    Save
+                                </button>
+                            </div>
+                            <div class="Controls-btn flex align-center">
+                                <button style="height: 35px; width: 35px; border-radius: 50%;"
+                                    class="flex align-center justify-center">
+                                    <img src="ytb images/three_dots.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="description">
+                        <p>2,013,494 views Premiered on 13 Oct 2021</p>
+                        <p>Animation vs. Physics.mp4</p>
+                        <div class="expandD">...more</div>
+                    </div>
+                </div>
+                <div class="moreVideos">
+                    <div class="cards">
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="card flex align-center space-between">
+                                <div class="vp-thumbnail">
+                                    <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                        alt="thumbnail">
+                                </div>
+                                <div class="vp-videoInfo">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT:  All-Stars 2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vPage.js"></script>
+</body>
+
+</html>

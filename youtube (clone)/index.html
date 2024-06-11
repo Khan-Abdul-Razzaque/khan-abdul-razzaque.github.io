@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube clone</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="youtube-web">
+        <!-- ---------------------------- NavBar ---------------------------- -->
+
+        <div class="nav-bar flex align-center space-between">
+            <div class="nav-sec-1 nav-sec flex align-center">
+                <div id="toggleBar" class="image-div flex align-center justify-center"><img src="ytb images/menu_toggle.svg"
+                        alt="toggle bar">
+                </div>
+                <div class="flex align-center"><img id="ytb-logo" src="ytb images/youtube_logo.svg" alt=""></div>
+                <span id="in">IN</span>
+            </div>
+            <div class="nav-sev-2 nav-sec flex align-center">
+                <div class="search flex align-center">
+                    <div class="flex align-center">
+                        <img style="display: none;" src="ytb images/search_icon.svg" alt="search">
+                        <input id="input-box" type="text" placeholder="Search">
+                    </div>
+                    <img src="ytb images/search_icon.svg" alt="search">
+                </div>
+                <div class="image-div flex align-center justify-center"><img src="ytb images/mic_icon.svg" alt=""></div>
+            </div>
+            <div class="nav-sec flex align-center">
+                <div class="image-div flex align-center justify-center"><img src="ytb images/video_call.svg" alt="video_call">
+                </div>
+                <div class="image-div flex align-center justify-center"><img src="ytb images/notification_bell.svg"
+                        alt="notification"></div>
+                <div style="background-color: gray;" class="image-div flex align-center justify-center">
+                    <div style="font-size: 22px; font-weight: 500;">A</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------- Sidebar ---------------------------- -->
+
+        <div id="sideBar" class="sidebar">
+            <div class="box">
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/home_icon.svg" alt="home">
+                        <li class="flex align-center">Home</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/shorts_icon.svg" alt="shorts">
+                        <li class="flex align-center">Shorts</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/sub_icon.svg" alt="subscription">
+                        <li class="flex align-center">Subscription</li>
+                    </a>
+                    <a id="m_s_item" class="anchor-tag align-center hidden" href="">
+                        <img src="ytb images/you.svg" alt="subscription">
+                        <li class="flex align-center">You</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="anchor-tag flex align-center">You</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/your_channel.svg" alt="your channel">
+                        <li class="flex align-center">Your Channel</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/history.svg" alt="history">
+                        <li class="flex align-center">History</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/playlist.svg" alt="playlist">
+                        <li class="flex align-center">Playlist</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/your_video.svg" alt="your video">
+                        <li class="flex align-center">Your Video</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/watch_later.svg" alt="watch later">
+                        <li class="flex align-center">Watch later</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/licked_video.svg" alt="liked vidoe">
+                        <li class="flex align-center">Liked Video</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">Subscription</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_kNaumymcxYzV7_n7_VRbQ2TRlIbU2w5csOMN0cH8jiED8=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">codeWithHarry</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mwDG5c8dHc3OXHHkfVRAku-f_8WkowUqaRKtPh3upc4pQ=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">अंतरिक्ष TV</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/F6V5Z9COzQuLBJ4T6_YM7va-dL1kTlXfuXZOa3EHOV6F4_Kgum6HFMQtXkUdk_ep1RWMHzOa=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Abu Shahma Samani</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/csBGlsetnliEbfL-gWQVezlCerKTtc0A5pqzWaBMrEwv82DJG1DpnnmUanXWwftkc-XyS-XzYw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">KHAN'S ACADEMY</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/2UCiZ7-jIJf8G26C0ZwehtSBHsmJk4nBr2xLoaNEbUlJ3wDfFpFW0D138j0UDoeqEApat42FhBw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Towards Eternity - اردو हिंदी</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mY2FOEMPxC_yQmfF97aG6gqV-YKiZPZY-mr2ORtLISQw=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Nasheed Club</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/PHzVzMQoLajz_4UyC95iwnt0_dPT4v-x0MF9F9g2TFzhs6ab7xMmhyx2ZPtil5bEgab_kRt2gg=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Sbj Classes</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/uG4v6r4O79i7J_rEuo6ASC3kjBq1cbXod0RP3R6lZbk7DFFGVUIULd8DAj4yd4Ea8jQLLFHdVQ=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">WAYOFLIFESQ</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">LifeAda</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/S1hvMUGhao5BvwEV59KHtzeu-Zwv9nXIZPl_dyoPZMike4Ru0cjIKotDH3tVCb8GMdEs0o9Eig=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">M Iqbal rather official</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_mpEFtiA2V5L5I4-cBfNfCwOSWwV4z6O_U_wkeg6qHkJIs=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Spoken English Guru</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/8gnENVPHO7vkQgBp4aigKXFyL0NMljWLW2rPhUaCJy-L6NW00sRGybLnNn7eTu5aarf6xg140g=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">ALL - IN - ONE</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image"
+                            src="https://yt3.ggpht.com/ytc/AIdro_ks343H3Hn6o-j_NgIAIC1bKUC1dYOTPpBBkrkLtBqWlTz6=s88-c-k-c0x00ffffff-no-rj"
+                            alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Aleena Rais Live</span></li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img class="circular-image" src="ytb images/more.svg" alt="home">
+                        <li class="flex align-center"><span class="ellipsis">Show more</span></li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">Explore</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/trendign.svg" alt="trending">
+                        <li class="flex align-center">Trending</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/shopping.svg" alt="shopping">
+                        <li class="flex align-center">Shopping</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/music.svg" alt="music">
+                        <li class="flex align-center">Music</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/films.svg" alt="films">
+                        <li class="flex align-center">Films</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/live.svg" alt="live">
+                        <li class="flex align-center">Live</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/gaming.svg" alt="gaming">
+                        <li class="flex align-center">Gaming</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/news.svg" alt="news">
+                        <li class="flex align-center">News</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/sports.svg" alt="sport">
+                        <li class="flex align-center">Sport</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/courses.svg" alt="courses">
+                        <li class="flex align-center">Courses</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/fashbea.svg" alt="fashion and beauty">
+                        <li class="flex align-center">Fashion & Beauty</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/podcasts.svg" alt="podcast">
+                        <li class="flex align-center">Podcasts</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <h3 class="flex align-center">More from YouTube</h3>
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_premium.svg" alt="premium">
+                        <li class="flex align-center">YouTube Premium</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_studio.svg" alt="studio">
+                        <li class="flex align-center">YouTube Studio</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_music.svg" alt="music">
+                        <li class="flex align-center">YouTube Music</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/ytb_kids.svg" alt="kids">
+                        <li class="flex align-center">YouTube Kids</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box hidden-items">
+                <ul>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/setting.svg" alt="setting">
+                        <li class="flex align-center">Setting</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/report_his.svg" alt="report">
+                        <li class="flex align-center">Report History</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/help.svg" alt="help">
+                        <li class="flex align-center">Help</li>
+                    </a>
+                    <a class="anchor-tag align-center" href="">
+                        <img src="ytb images/feedback.svg" alt="feedback">
+                        <li class="flex align-center">Send feedback</li>
+                    </a>
+                </ul>
+            </div>
+            <hr class="hidden-items">
+            <div class="box app-details hidden-items">
+                <div>
+                    <span>About</span>
+                    <span>Press</span>
+                    <span>Copyright</span>
+                    <span>Contact us</span>
+                    <span>Creator</span>
+                    <span>Advertise</span>
+                    <span>Developers</span>
+                </div>
+                <div>
+                    <span>Terms</span>
+                    <span>Privacy</span>
+                    <span>Policy & Safety</span>
+                    <span>How YouTube works</span>
+                    <span>Test new features</span>
+                </div>
+                <div>
+                    <span style="color: rgb(83, 83, 83);">&copy; 2024 Google LLC</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ---------------------------- video Container ---------------------------- -->
+
+        <div id="video_container" class="video-container">
+            <div class="videos-tabs">
+                <div class="tabs flex align-center">
+                    <span class="tab">All</span>
+                    <span class="tab">Music</span>
+                    <span class="tab">KD Pathak</span>
+                    <span class="tab">Mixes</span>
+                    <span class="tab">Ghazal</span>
+                    <span class="tab">Middle Eastern Music</span>
+                    <span class="tab">Police Procedurals</span>
+                    <span class="tab">Gaming</span>
+                    <span class="tab">Religious Recitation</span>
+                    <span class="tab">Web Development</span>
+                    <span class="tab">Hill Climb Racing 2</span>
+                    <span class="tab">Talent Shows</span>
+                    <span class="tab">Physics</span>
+                    <span class="tab">AI</span>
+                    <span class="tab">Live</span>
+                    <span class="tab">Game Shows</span>
+                    <span class="tab">Indian Pop Music</span>
+                    <span class="tab">Seminars</span>
+                    <span class="tab">Recently Uploaded</span>
+                    <span class="tab">Watched</span>
+                    <span class="tab">New to You</span>
+                </div>
+                <div class="videos flex">
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/xLXVUV7E-i8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5q1271z53IKeijIfqlHzb7exNxQ"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/9LhhL553Wxb5IM7w7I9RA0RO6jFdrCeBJb5oqdzzueVGSvA8z3R85-IsdDHzKSEKOVjDpaLEdg=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Why Adalat Serial Stopped? Worst Mistakes</p>
+                                    <p>अंतरिक्ष TV Sci-Fi</p>
+                                    <p>152K views - 2 weeks ago</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/QrPhn-jaV5A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJ2BSh6wUJeX04U0BcTduH7OEUNg"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/8qSWaJclMPH1BKUjgNErEVY2cLFm7-nlp2N3KdAmIiXvZk0g3c8SYehqlurGdAi1JJhZ8nQg3xg=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Keiichi Iwasaki's Charming MAGIC Will Leave You Wanting More! | AGT: All-Stars
+                                        2023</p>
+                                    <p>America's Got Talent</p>
+                                    <p>4.7M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/etMlV5ZtN_8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA872IUl5NkW3eg9tRdv4xq7DqsCQ"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_mjsdjRJHObST5iN1e4p0KeOzwY770CoscaYE8NPcQue5A=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>MAKE JOKE OF ||MJO|| - BOARD EXAM RESULT CBSE by Saurabh Shukla</p>
+                                    <p>Make Joke Of</p>
+                                    <p>18M views - 1 year ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/gPGK8DUhHws/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyEn_Dr5YqObxNbHnHGRChcL2kQg"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_k0nt__LJEyKrxXdq2lGMZyK-sVzW0FmwB0p0dOPMbWNB0=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>AMAZING FACTS: Universe Ka Wajan | Ball Lightening Ka Rahasya | Fidget Spinners
+                                        Where? & Many Facts</p>
+                                    <p>FactTechz</p>
+                                    <p>313K views - 1 month ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/RD4JPW6mKaU/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBMoEzAP&rs=AOn4CLCisi0-mXSU20LpaMFlAA7hR3ti7A"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_kNaumymcxYzV7_n7_VRbQ2TRlIbU2w5csOMN0cH8jiED8=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>This is How Hackers Crack Passwords! (Don't Try)</p>
+                                    <p>CodeWithHarry</p>
+                                    <p>45K views - 1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/QA1qNqNCtAo/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCV25j5dvvA9aCE45OT8GNXuLpXHw"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>From Hot to Cool Science Of Air Conditioner</p>
+                                    <p>LifeAda</p>
+                                    <p>449K views - 2 weeks ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/ErMSHiQRnc8/hq720.jpg?sqp=-oaymwEXCNAFEJQDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAn5W5Xqf5xMqOd-zhoVAlXIBStsQ"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_nT0JlrKAobtCUAdujd2rT0BpbN2Ln8fP023lGOnq_CGOM=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Animation vs. Physics</p>
+                                    <p>Alan Becker</p>
+                                    <p>22M views - 5 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/ROOeGPrC1Do/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC9IdduH-fkQgwygTj-VbqDmFGfww"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_kSOvRbERRshgtRg3YLXZG_UeUt4aSu5YrcKUxyLDBvspLv=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>FULL FILM: McLaren Speedtail vs F35 Fighter Jet | Top Gear</p>
+                                    <p>Top Gear</p>
+                                    <p>33M views - 4 years ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/zs2iJOhF7E0/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcUHrYJegXeBgN0UWaWSYw95gnBA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/VJUvOC7P-TQzsTPUH-I0y4mOvb-ZsPbAnd8pvxyopygZ7GekXtNG8iowF4P0yGVqqa9QhUBBnEg=s48-c-k-c0x00ffffff-no-nd-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>New Heart Touching Hamad | Koi Bataye Daryaon Ko | Muhammad Anas Nazeer #hamd</p>
+                                    <p>Muhammad Anas Nazeer</p>
+                                    <p>1.5M views 1 year ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/AWojYBhvfjM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-x0HLvcXLAraWkdexNSZsoDM77Q"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_m2tJ25eDaNHz-A9WFSTDiQdB554_fyC0e9UaBR-Ac6AoA=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Experiment at -196°C, Quantum Levitation | Magnetic Games</p>
+                                    <p>Magnetic Games</p>
+                                    <p>21M views - 2 years ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/VNckyzBcfo0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDx7V4vnVRxDDpqKtcG4WWd4zUGmg"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/CSgELr3fJdjgW_bHPoBkE7e2YbqLQTDjWg3mqc1dcxQmc1AiYJimKbkcx7SzOUeC22l2LMmirQ=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>क्या आपको भी Magnet अपनी तरफ खीींच सकती है। THE WORLD’S MOST POWERFUL</p>
+                                    <p>Veritasium in हिन्दी</p>
+                                    <p>14K views - 1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/Kk4xLelvhs4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBkcXfFrlcSr92VwYp7GaW9hiMDUg"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/ytc/AIdro_mVZ4AHe826kUXrFWybMD8xewxe0jxek1j2RABjppew-A=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>London's Tower Bridgeकी अद्भुत इंजीनियरिंग</p>
+                                    <p>Lesics हिंदी</p>
+                                    <p>103K views - 5 days ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/DC3GwfeRB38/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrU_qd9-Rob9HWDiS5ZY86Ul_ZA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Amazing Hydraulic Rock Breaker Working</p>
+                                    <p>LifeAda</p>
+                                    <p>340K views - 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/DC3GwfeRB38/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrU_qd9-Rob9HWDiS5ZY86Ul_ZA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Amazing Hydraulic Rock Breaker Working</p>
+                                    <p>LifeAda</p>
+                                    <p>340K views - 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/DC3GwfeRB38/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrU_qd9-Rob9HWDiS5ZY86Ul_ZA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Amazing Hydraulic Rock Breaker Working</p>
+                                    <p>LifeAda</p>
+                                    <p>340K views - 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/DC3GwfeRB38/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrU_qd9-Rob9HWDiS5ZY86Ul_ZA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Amazing Hydraulic Rock Breaker Working</p>
+                                    <p>LifeAda</p>
+                                    <p>340K views - 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a class="links">
+                        <div class="video">
+                            <div class="thumbnail flex">
+                                <img src="https://i.ytimg.com/vi/DC3GwfeRB38/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTrU_qd9-Rob9HWDiS5ZY86Ul_ZA"
+                                    alt="">
+                            </div>
+                            <div class="video-info flex">
+                                <div class="channel-icon">
+                                    <img src="https://yt3.ggpht.com/90Y05oknDb2VVliQk-okfNNI2gjD-qddVjn1LndselpTSKuoP0oAsteC14U9UEwvxeSbrJ1UA-o=s68-c-k-c0x00ffffff-no-rj"
+                                        alt="">
+                                </div>
+                                <div class="vd-detail">
+                                    <p>Amazing Hydraulic Rock Breaker Working</p>
+                                    <p>LifeAda</p>
+                                    <p>340K views - 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

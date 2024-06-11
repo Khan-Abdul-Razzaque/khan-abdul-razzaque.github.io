@@ -1,0 +1,84 @@
+.container .tab-list .tab:hover {
+    background-color: rgb(171, 171, 171);
+    box-shadow: 0 2px 5px 0.5px rgb(100, 100, 100);
+}
+
+.search-box:hover {
+    border-color: #f1f1f1;
+    box-shadow: 0 2px 5px 0.5px rgb(83, 83, 83);
+}
+
+.shortcut-links a:hover,
+.subscribed a:hover {
+    background-color: rgb(175, 175, 175);
+}
+
+@media (max-width: 500px) {
+    .nav-middle, .nav-right {
+        display: none;
+    }
+
+    .logo .ytb-icon {
+        margin-left: 0;
+        width: 40px;
+    }
+
+    .logo .ytb-icon-name {
+        font-size: 18px;
+    }
+
+    .container, .increase-container-size {
+        padding: 0 1.5%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .side-bar {
+        display: none;
+        padding-top: 135px;
+    }
+
+    .hide-side-bar {
+        display: none;
+    }
+
+    .container .vid-list .video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 970px) and (min-width: 500px) {
+    .nav-middle > img, .nav-right img {
+        display: none;
+    }
+
+    .nav-middle .search-box input {
+        width: 200px;
+    }
+
+    .nav-right .user-pic {
+        display: block;
+    }
+
+    .side-bar {
+        width: 230px;
+    }
+
+    .container {
+        padding-left: 230px;
+    }
+
+    .container .vid-list .video {
+        width: calc(100% / 3 - 8px);
+    }
+
+    .hide-side-bar {
+        width: 65px;
+    }
+
+    .increase-container-size {
+        padding-left: 65px;
+    }
+}

@@ -1,0 +1,194 @@
+.vp-sidebar {
+    transition: transform .2s ease-out;
+    z-index: var(--layer-4)
+}
+
+.hidden-sidebar {
+    transform: translateX(-100%);
+}
+
+#video_page {
+    /* border: 2px solid rgb(255, 0, 0); */
+    min-height: calc(100vh - var(--navbar-height));
+    padding: 20px 50px;
+}
+
+#video_page > div {
+    /* border: 2px solid white; */
+}
+
+.videoContainer {
+    width: calc(65% - 10px);
+    /* border: 1px solid red; */
+}
+
+.moreVideos {
+    width: calc(35% - 10px);
+    /* border: 1px solid yellow; */
+    padding: 5px;
+}
+
+.videoBox {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.videoBox video {
+    width: 100%;
+    border-radius: 20px;
+    outline: 0;
+}
+
+.videoTitle {
+    margin: 5px 0 10px;
+    color: rgb(218, 218, 218);
+}
+
+.videoTitle span {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.videoControls {
+    /* border: 2px solid blue; */
+    margin-bottom: 15px;
+}
+
+.leftControls {
+    gap: 7px;
+}
+
+.leftControls > div {
+    gap: 10px;
+}
+
+.leftControls > div img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.cName {
+    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 6px;
+    max-width: 170px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    color: rgb(218, 218, 218);
+}
+
+.subscribers {
+    font-size: 13px;
+    max-width: 170px;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    color: rgb(193, 193, 193);
+
+}
+
+.Controls-btn {
+    height: 40px;
+}
+
+#subs-btn button {
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgb(225, 225, 225);
+    color: black;
+    width: 100px;
+}
+
+#subs-btn button:hover {
+    background-color: rgb(166, 166, 166);
+}
+
+.Controls-btn button {
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 0;
+    height: 40px;
+    background-color: #272727;
+    color: white;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+}
+
+.Controls-btn button:hover {
+    background-color: #393939;
+}
+
+.Controls-btn button img {
+    filter: invert(.25);
+}
+
+.rightControls {
+    gap: 5px;
+}
+
+.description {
+    background-color: rgb(51, 51, 51);
+    padding: 12px;
+    border-radius: 15px;
+    font-weight: 500;
+    color: rgb(222, 222, 222);
+}
+
+.expandD {
+    margin-top: 20px;
+    cursor: pointer;
+    width: fit-content;
+    padding: 10px 0;
+}
+
+.cards {
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.cards a {
+    text-decoration: none;
+    color: rgb(222, 222, 222);
+    width: 100%;
+    display: block;
+    /* border: 1px solid blue; */
+    margin-bottom: 15px;
+}
+
+.card {
+    width: 100%;
+}
+
+.vp-thumbnail {
+    width: 40%;
+    /* border: 1px solid white; */
+    display: flex;
+}
+
+.vp-thumbnail img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.vp-videoInfo {
+    width: 58%;
+}
+
+.vp-videoInfo p {
+    overflow: hidden;
+    max-width: 100%;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.vp-videoInfo p:first-child {
+    margin-bottom: 13px;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+}
