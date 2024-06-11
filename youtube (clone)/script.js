@@ -6,33 +6,33 @@ async function fetchDetails() {
 }
 
 async function main() {
-    //     // Adding an event listener to toggle bar.
-    //     toggleBar.addEventListener('click', () => {
-    //         sideBar.classList.toggle('mini-sidebar');
-    //         video_container.classList.toggle('big-video-container');
-    //         m_s_item.classList.toggle('hidden');
-    //     });
+        // Adding an event listener to toggle bar.
+        toggleBar.addEventListener('click', () => {
+            sideBar.classList.toggle('mini-sidebar');
+            video_container.classList.toggle('big-video-container');
+            m_s_item.classList.toggle('hidden');
+        });
 
-    //     // Fetching video from the folder.
-    //     let links = document.querySelectorAll('.videos a');
-    //     links.forEach(link => {
-    //         link.href = "video_page.html";
-    //     });
+        // Fetching video from the folder.
+        let links = document.querySelectorAll('.videos a');
+        links.forEach(link => {
+            link.href = "video_page.html";
+        });
 
-    //     // Adding event listener to tabs
-    //     let tabs = document.querySelectorAll('.tab');
-    //     let previousTab = null;
-    //     tabs.forEach(tab => {
-    //         tab.addEventListener('click',function() {
-    //             if (previousTab != null) {
-    //                 previousTab.classList.remove('white-tab');
-    //             }
-    //             this.classList.toggle('white-tab');
+        // Adding event listener to tabs
+        let tabs = document.querySelectorAll('.tab');
+        let previousTab = null;
+        tabs.forEach(tab => {
+            tab.addEventListener('click',function() {
+                if (previousTab != null) {
+                    previousTab.classList.remove('white-tab');
+                }
+                this.classList.toggle('white-tab');
 
-    //             previousTab = this;
-    //         })
+                previousTab = this;
+            })
 
-    //     })
+        })
     
     let videos = await fetchDetails();
     // console.log(typeof videos)
