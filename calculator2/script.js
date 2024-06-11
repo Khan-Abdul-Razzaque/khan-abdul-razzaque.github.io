@@ -19,7 +19,7 @@ Array.from(buttons).forEach((button) => {
                     string = "+" + string
                     document.querySelector('input').value = string;
                 }
-                i = 1
+                i = 1;
             }
             else {
                 if (string.charAt(0) == "+") {
@@ -30,7 +30,7 @@ Array.from(buttons).forEach((button) => {
                     string = "-" + string
                     document.querySelector('input').value = string;
                 }
-                i = 0
+                i = 0;
             }
         }
         else if (e.target.innerHTML == 'AC') {

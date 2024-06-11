@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="billing.css">
+</head>
+<body>
+
+    <nav class="flex-disp">
+        <div class="nav-left">
+            <img src="Avica Images/logo.svg" alt="">
+        </div>
+        <div class="nav-right flex-disp">
+            <div class="web-app flex-disp">
+                <img src="Avica Images/world_icon.svg">
+                Open web app (beta)
+            </div>
+            <button class="download-btn flex-disp">
+                <img src="Avica Images/install.svg">
+                Download
+            </button>
+            <img src="https://console.avica.link/static/media/bell-icon.bcd7db9348fe107becd1e799464bca38.svg">
+            <div class="user-icon flex-disp">
+                <div class="flex-disp">A</div>
+                <div class="expand-more flex-disp">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="arrow">
+                        <g id="Frame">
+                            <path id="Vector"
+                                d="M8.00028 8.7809L11.3001 5.48104L12.2429 6.42384L8.00028 10.6665L3.75761 6.42384L4.70041 5.48104L8.00028 8.7809Z"
+                                fill="#7F8C99"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container flex-disp">
+
+        <!-- ------------- Side Bar ------------- -->
+
+        <div class="side-bar">
+            <a href="index.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/home.b81a00607916a8b060aadd0fdf2e974e.svg">
+                <span>Home</span>
+            </a>
+            <a href="profile.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/profile.89e93ecd0d8cd17e98d5adc7e20a86c8.svg">
+                <span>My Profile</span>
+            </a>
+            <a href="license.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/manage-sub.217f11aaa45f6232fd35750ea086d271.svg">
+                <span>Manage Sub</span>
+            </a>
+            <a href="billing.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/billing.bf3d4d02b552d04dbedec67a7849645c.svg">
+                <span>Billing</span>
+            </a>
+            <a href="redeem-code.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/redeem-code.48fee4fb0c35b0c962d84fbaa7c1c249.svg">
+                <span>Redeem Code</span>
+            </a>
+            <a href="sessions.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/sessions.0d7cfe95a9cfbd8aa72b86e42b16fdb4.svg">
+                <span>Sessions</span>
+            </a>
+            <a href="devices.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/devices.a1639f58bc994bfd1353515092f64777.svg">
+                <span>Devices</span>
+            </a>
+            <a href="security.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/security.e6363b08f1e275119f7fe0cd4c3447d7.svg">
+                <span>Security</span>
+            </a>
+        </div>
+
+        <!-- ------------- Main Content ------------- -->
+ 
+        <div class="content billing-content">
+            <div class="billing-heading">
+                <h1>Billing</h1>
+            </div>
+            <div class="billing-detail">
+                <table>
+                    <tr>
+                        <td>Date</td>
+                        <td>Description</td>
+                        <td>channels</td>
+                        <td>Type</td>
+                        <td>Receipt Total</td>
+                        <td>Payment method</td>
+                        <td>Status</td>
+                        <td>Receipt</td>
+                    </tr>
+                    <tr>
+                        <td>20 March, 2024</td>
+                        <td>Pro_Trial</td>
+                        <td>1</td>
+                        <td>7-Days</td>
+                        <td>USD 0</td>
+                        <td>Free</td>
+                        <td><div id="bill-expired">Expired</div></td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="next-page-container flex-disp">
+                <div class="pages flex-disp">
+                    <button class="previous-page">
+                        <span>
+                            <img src="Avica Images/previous_page.svg">
+                        </span>
+                    </button>
+                    <button class="current-page">1</button>
+                    <button class="next-page">
+                        <span>
+                            <img src="Avica Images/next_page.svg" alt="">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

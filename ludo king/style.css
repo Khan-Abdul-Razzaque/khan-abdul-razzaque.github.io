@@ -1,0 +1,410 @@
+:root {
+    /* --ludoHolderHeight: 700px;
+            --ludoHolderWidth: 700px;
+            --ludoHolderPadding: 10px; */
+    --playersTokensContainer_shadow_color: rgb(131, 131, 131);
+    --relatedToPlayer_1Color: #dd0000;
+    --relatedToPlayer_2Color: #dddd00;
+    --relatedToPlayer_3Color: #00dd00;
+    --relatedToPlayer_4Color: #4444ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+body {
+    height: 100vh;
+    background: rgb(2, 2, 80);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.container {
+    border: 5px solid red;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.ludoHolder {
+    margin: 0 auto;
+    /* border: 4px solid black; */
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
+}
+
+.ludoFrame {
+    border: 4px solid rgb(255, 255, 255);
+    padding: 10px;
+    background-color: rgb(83, 36, 145);
+}
+
+.players {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(175, 114, 114);
+    justify-content: space-between;
+    padding: 0 5px;
+    gap: 20px;
+    user-select: none;
+}
+
+.player_N_D {
+    gap: 5px;
+    /* border: 2px solid black; */
+    padding: 0px;
+}
+
+.playerName {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'helvetica';
+    letter-spacing: .5px;
+    /* border: 2px solid black; */
+    padding: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.name {
+    max-width: 180px;
+    width: fit-content;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    /* border: 1px solid; */
+}
+
+.playerName input {
+    padding: 5px 10px;
+    border: 3px solid #555555;
+    color: rgb(52, 56, 57);
+    background-color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'segoe UI';
+    letter-spacing: .5px;
+    width: 165px;
+    border-radius: 7px;
+    transform: scale(0, 0);
+    outline: 0;
+    transition: border .3s ease-in, transform .6s ease-in-out, box-shadow .3s ease-in;
+    position: absolute;
+    /* display: none; */
+}
+
+#input_p_1Name,
+#input_p_3Name {
+    transform-origin: left;
+    left: 0;
+}
+
+#input_p_2Name,
+#input_p_4Name {
+    transform-origin: right;
+    right: 0;
+}
+
+.playerName input:hover {
+    border-color: rgb(0, 229, 255);
+    box-shadow: 0 0 10px 5px rgba(0, 95, 106, 0.679);
+}
+
+.dice {
+    height: 40px;
+    width: 40px;
+    perspective: 1000px;
+    /* flex-grow: 1; */
+    /* border: 2px solid red; */
+    align-items: center;
+
+}
+
+.faces {
+    transform-style: preserve-3d;
+    height: 30px;
+    width: 30px;
+    position: relative;
+    /* padding: 2.5px; */
+    transform: translateZ(-20px) scale(0, 0);
+    transition: transform .3s ease-in-out;
+    transform-origin: center;
+    cursor: pointer;
+    /* border: 1px solid green; */
+    /* box-shadow: 5px 2px 10px 3px black; */
+}
+
+#firstFace {
+    transform: translateZ(-20px) scale(1, 1);
+}
+
+.ok {
+    /* height: 35px;
+            width: 35px; */
+    padding: 3px;
+    background-color: rgb(81, 81, 81);
+    color: rgb(234, 234, 234);
+    position: absolute;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'segoe UI';
+    border: 3px solid #555555;
+    box-sizing: border-box;
+    transition: border .3s ease-in, transform .6s ease-in-out, box-shadow .3s ease-in, color .3s ease-in, background-color .3s ease-in;
+    transform: scale(0, 0);
+    cursor: pointer;
+}
+
+.ok:hover {
+    color: black;
+    background-color: #d5d5d5;
+    border-color: rgb(0, 229, 255);
+    box-shadow: 0 0 10px 3px rgba(0, 95, 106, 0.679);
+}
+
+.face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.faceLeft {
+    transform: rotateY(90deg) translateZ(15px);
+}
+
+.faceRight {
+    transform: rotateY(-90deg) translateZ(15px);
+}
+
+.faceTop {
+    transform: rotateX(90deg) translateZ(15px);
+}
+
+.faceBottom {
+    transform: rotateX(-90deg) translateZ(15px);
+}
+
+.faceFront {
+    transform: rotate(0) translateZ(15px);
+}
+
+.faceBack {
+    transform: rotateY(180deg) translateZ(15px);
+}
+
+.tokenContainer {
+    padding: 3px;
+    margin: 5px;
+    border: 4px solid black;
+    flex-direction: column;
+}
+
+.diceNumber {
+    height: 100%;
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
+    background-color: transparent;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+.playersTokens {
+    width: 180px;
+    height: 180px;
+    border: 4px solid rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+.player1 {
+    margin: 0 5px 5px 0;
+    box-shadow: 1px 1px 5px 2px var(--playersTokensContainer_shadow_color);
+    background-color: var(--relatedToPlayer_1Color);
+}
+
+.player2 {
+    margin: 0 0 5px 5px;
+    box-shadow: -1px 1px 5px 2px var(--playersTokensContainer_shadow_color);
+    background-color: var(--relatedToPlayer_2Color);
+}
+
+.player3 {
+    margin: 5px 5px 0 0;
+    box-shadow: 1px -1px 5px 2px var(--playersTokensContainer_shadow_color);
+    background-color: var(--relatedToPlayer_3Color);
+}
+
+.player4 {
+    margin: 5px 0 0 5px;
+    box-shadow: -1px -1px 5px 2px var(--playersTokensContainer_shadow_color);
+    background-color: var(--relatedToPlayer_4Color);
+}
+
+.tokenBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: rgb(220, 220, 220);
+    height: 80%;
+    width: 80%;
+    border: 4px solid;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.token {
+    height: 35px;
+    width: 35px;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px 4px black;
+}
+
+.verticalTrack_1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    height: 180px;
+}
+
+.horizontalTracks {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.home {
+    height: 90px;
+    width: 90px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    margin: 0 5px;
+    box-shadow: 0px 0px 5px 3px gray;
+}
+
+.homeSvg {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 178, 178);
+}
+
+.player_1Home {
+    fill: var(--relatedToPlayer_1Color);
+    stroke-width: 0;
+
+}
+
+.player_2Home {
+    fill: var(--relatedToPlayer_2Color);
+    stroke-width: 0;
+
+}
+
+.player_3Home {
+    fill: var(--relatedToPlayer_3Color);
+    stroke-width: 0;
+
+}
+
+.player_4Home {
+    fill: var(--relatedToPlayer_4Color);
+    stroke-width: 0;
+
+}
+
+.track {
+    width: 30px;
+    height: 30px;
+    border: 3px solid black;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.topBorder_0 {
+    border-top: 0;
+}
+
+.leftBorder_0 {
+    border-left: 0;
+}
+
+.player_1HomeColor {
+    background-color: var(--relatedToPlayer_1Color);
+}
+
+.player_2HomeColor {
+    background-color: var(--relatedToPlayer_2Color);
+}
+
+.player_3HomeColor {
+    background-color: var(--relatedToPlayer_3Color);
+}
+
+.player_4HomeColor {
+    background-color: var(--relatedToPlayer_4Color);
+}
+
+.arrow {
+    position: absolute;
+    height: 16px;
+    width: 40px;
+    opacity: .3;
+}
+
+.yellowArrow {
+    transform: rotateZ(90deg);
+    margin-top: 16px;
+}
+
+.blueArrow {
+    transform: rotateZ(.5turn);
+    /* margin-right: 10px; */
+}
+
+.greenArrow {
+    transform: rotateZ(-.25turn);
+    margin-bottom: 12px;
+}
+
+.stops {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 3px;
+    opacity: .3;
+    user-select: none;
+}
+
+/* @media (max-width: 500px) {
+            .playersTokens {
+                width: 120px;
+                height: 120px;
+            }
+
+            .verticalTrack_1 {
+                height: 120px;
+            }
+        } */
+
+/* .feces {
+            background-color: red;
+        } */

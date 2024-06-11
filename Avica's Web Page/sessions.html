@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sessions</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .session-content {
+            padding: 30px;
+        }
+
+        .session-heading {
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .session-heading::before {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 20px;
+            background-color: blue;
+            position: absolute;
+            left: 0;
+            top: 9px;
+        }
+
+        .session-main {
+            width: 100%;
+        }
+
+        .select {
+            justify-content: space-between;
+            padding: 12px 7px;
+            height: 40px;
+            border: 1px solid rgba(100, 132, 139, 0.248);
+            width: 200px;
+            border-radius: 5px 0 0 5px;
+            position: relative;
+            user-select: none;
+        }
+
+        .input {
+            width: 450px;
+            height: 40px;
+            padding: 9.5px 7px;
+            border-radius: 0 5px 5px 0;
+            border: 1px solid rgba(100, 132, 139, 0.248);
+            font-size: 17px;
+        }
+
+        .session-btn {
+            width: fit-content;
+            /* height: 40px; */
+            padding: 8.5px 30px;
+            border: 1px solid rgba(100, 132, 139, 0.248);
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .session-records {
+            width: 100%;
+            /* border: solid brown thin; */
+        }
+
+        .session-records table {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        .session-records table tr {
+            height: 40px;
+            border-radius: 5px;
+        }
+
+        .session-records table tr th,
+        .session-records table tr td {
+            padding: 15px;
+            text-align: left;
+            color: rgb(41, 41, 41);
+            border-bottom: 1px solid rgb(221, 233, 242);
+        }
+
+        .session-records table tr th {
+            background-color: rgb(243, 245, 248);
+            font-size: 17px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .session-records table tr:hover {
+            background-color: rgb(243, 245, 248);
+        }
+
+        .select-option {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            border: 1px solid rgb(158, 158, 158);
+            padding: 10px 3px 0;
+            background-color: white;
+            border-radius: 3px;
+            transform-origin: center top;
+            scale: 1 0;
+        }
+
+        .select-option div {
+            /* border: 2px solid black; */
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .select-option div div {
+            /* border: 1px solid red; */
+            border-radius: 5px;
+            background-color: rgba(102, 128, 127, 0.182);
+            user-select: none;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        .select-option div div:hover {
+            background-color: rgba(102, 128, 127, 0.25);
+        }
+
+        .animation {
+            animation: expandSelect .3s ease forwards;
+        }
+
+        @keyframes expandSelect {
+            from {
+                scale: 1 0;
+            }
+
+            to {
+                scale: 1 1;
+            }
+        }
+
+        .next-page-container {
+            justify-content: flex-end;
+            padding: 18px 0;
+        }
+
+        .pages {
+            gap: 20px;
+        }
+
+        .pages button {
+            height: 40px;
+            width: 40px;
+            background-color: transparent;
+            border: 0;
+            border-radius: 7px;
+            font-family: serif;
+            cursor: not-allowed;
+        }
+
+        .pages .current-page {
+            border: 2px solid rgb(73, 161, 255);
+            color: rgb(73, 161, 255);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ------------- Nav Bar ------------- -->
+
+    <nav class="flex-disp">
+        <div class="nav-left">
+            <img src="Avica Images/logo.svg" alt="">
+        </div>
+        <div class="nav-right flex-disp">
+            <div class="web-app flex-disp">
+                <img src="Avica Images/world_icon.svg">
+                Open web app (beta)
+            </div>
+            <button class="download-btn flex-disp">
+                <img src="Avica Images/install.svg">
+                Download
+            </button>
+            <img src="https://console.avica.link/static/media/bell-icon.bcd7db9348fe107becd1e799464bca38.svg">
+            <div class="user-icon flex-disp">
+                <div class="flex-disp">A</div>
+                <div class="expand-more flex-disp">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="arrow">
+                        <g id="Frame">
+                            <path id="Vector"
+                                d="M8.00028 8.7809L11.3001 5.48104L12.2429 6.42384L8.00028 10.6665L3.75761 6.42384L4.70041 5.48104L8.00028 8.7809Z"
+                                fill="#7F8C99"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------- Main Container ------------- -->
+
+    <div class="container flex-disp">
+
+        <!-- ------------- Side Bar ------------- -->
+
+        <div class="side-bar">
+            <a href="index.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/home.b81a00607916a8b060aadd0fdf2e974e.svg">
+                <span>Home</span>
+            </a>
+            <a href="profile.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/profile.89e93ecd0d8cd17e98d5adc7e20a86c8.svg">
+                <span>My Profile</span>
+            </a>
+            <a href="license.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/manage-sub.217f11aaa45f6232fd35750ea086d271.svg">
+                <span>Manage Sub</span>
+            </a>
+            <a href="billing.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/billing.bf3d4d02b552d04dbedec67a7849645c.svg">
+                <span>Billing</span>
+            </a>
+            <a href="redeem-code.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/redeem-code.48fee4fb0c35b0c962d84fbaa7c1c249.svg">
+                <span>Redeem Code</span>
+            </a>
+            <a href="sessions.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/sessions.0d7cfe95a9cfbd8aa72b86e42b16fdb4.svg">
+                <span>Sessions</span>
+            </a>
+            <a href="devices.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/devices.a1639f58bc994bfd1353515092f64777.svg">
+                <span>Devices</span>
+            </a>
+            <a href="security.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/security.e6363b08f1e275119f7fe0cd4c3447d7.svg">
+                <span>Security</span>
+            </a>
+        </div>
+
+        <!-- ------------- Main Content ------------- -->
+
+        <div class="content session-content">
+            <div class="session-heading">Sessions</div>
+            <div class="session-main">
+                <div style="justify-content: space-between; margin-bottom: 20px;" class="flex-disp">
+                    <div style="gap: 15px;" class="flex-disp">
+                        <div class="flex-disp">
+                            <div class="select flex-disp">
+                                <div>Connect From ID</div>
+                                <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                    </path>
+                                </svg>
+                                <div class="select-option">
+                                    <div>
+                                        <div>Connect From ID</div>
+                                        <div>Connect To ID</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input class="input" type="text" placeholder="Please enter ID">
+                        </div>
+                        <button class="session-btn">
+                            <img src="">
+                            Search
+                        </button>
+                        <button class="session-btn">
+                            <img src="">
+                            Reset
+                        </button>
+                    </div>
+                    <button class="session-btn">Disconnect</button>
+                </div>
+                <div class="session-records">
+                    <table>
+                        <colgroup>
+                            <col style="width: 150px;">
+                            <col style="width: 150px;">
+                            <col style="width: 150px;">
+                            <col style="width: 200px;">
+                            <col style="width: 200px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>Connect From ID</th>
+                                <th>Connect To ID</th>
+                                <th>Status</th>
+                                <th>Start Time</th>
+                                <th>End time</th>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                            <tr>
+                                <td>732081736</td>
+                                <td>553442387</td>
+                                <td style="display: flex; align-items: center; gap: 5px;">
+                                    <div style="display: flex; align-items: center; justify-content: center; border-radius: 50%; background-color: #aaa; width: 20px; height: 20px;">
+                                        <img src="https://console.avica.link/static/media/closed-icon.d185580c62b6935708d30a392c184427.svg">
+                                    </div>
+                                    Closed
+                                </td>
+                                <td>2024-04-06 00:31:18</td>
+                                <td>2024-04-06 00:31:25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="next-page-container flex-disp">
+                <div class="pages flex-disp">
+                    <button class="previous-page">
+                        <span>
+                            <img src="Avica Images/previous_page.svg">
+                        </span>
+                    </button>
+                    <button class="current-page">1</button>
+                    <button style="border-color: gray; color: gray;" class="current-page">2</button>
+                    <button class="next-page">
+                        <span>
+                            <img src="Avica Images/next_page.svg" alt="">
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let selectTab = document.querySelector('.select');
+        let selectItem = document.querySelector('.select-option');
+        selectTab.addEventListener('click', () => {
+            selectItem.classList.toggle('animation');
+        })
+    </script>
+</body>
+
+</html>

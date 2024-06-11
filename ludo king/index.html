@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Ludo King</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="ludoHolder flex">
+            <div class="ludoFrame">
+                <div class="players flex">
+                    <div class="player_N_D flex">
+                        <div class="dice flex justifyCenter">
+                            <div id="firstFace" class="faces" title="Click to roll">
+                                <div class="face faceLeft">
+                                    <svg class="diceNumber">
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceRight">
+                                    <svg class="diceNumber">
+                                        <circle cx="7" cy="7" r="3" fill="black"></circle>
+                                        <circle cx="17" cy="17" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceTop">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBottom">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceFront">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBack">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="20" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="20" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <button class="ok flex justifyCenter">OK</button>
+                        </div>
+                        <div class="playerName flex justifyCenter">
+                            <div class="name" title="Double click to change">Player 1</div>
+                            <input class="input_name" id="input_p_1Name" type="text" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div style="flex-direction: row-reverse;" class="player_N_D flex">
+                        <div class="dice flex justifyCenter">
+                            <div class="faces" title="Click to roll">
+                                <div class="face faceLeft">
+                                    <svg class="diceNumber">
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceRight">
+                                    <svg class="diceNumber">
+                                        <circle cx="7" cy="7" r="3" fill="black"></circle>
+                                        <circle cx="17" cy="17" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceTop">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBottom">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceFront">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBack">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="20" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="20" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <button class="ok flex justifyCenter">OK</button>
+                        </div>
+                        <div class="playerName flex justifyCenter">
+                            <div class="name" title="Double click to change">Player 2</div>
+                            <input class="input_name" id="input_p_2Name" type="text" placeholder="Enter Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="tokenContainer flex justifyCenter">
+                    <div style="display: flex;">
+                        <div class="playersTokens player1 flex justifyCenter">
+                            <div class="tokenBox">
+                                <div style="background-color: var(--relatedToPlayer_1Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_1Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_1Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_1Color);" class="token"></div>
+                            </div>
+                        </div>
+                        <div class="verticalTrack_1">
+                            <div class="track"></div>
+                            <div style="justify-content: center; position: relative;" class="track leftBorder_0 flex">
+                                <svg class="arrow yellowArrow">
+                                    <path d="M1 5 25 5 25 0 35 8 25 16 25 11 1 11Z" stroke="black" stroke-width="2"
+                                        fill="#ffff99"></path>
+                                </svg>
+                            </div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_2HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                        </div>
+                        <div class="playersTokens player2 flex justifyCenter">
+                            <div class="tokenBox">
+                                <div style="background-color: var(--relatedToPlayer_2Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_2Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_2Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_2Color);" class="token"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="horizontalTracks">
+                            <div class="track"></div>
+                            <div class="track leftBorder_0 player_1HomeColor flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div style="justify-content: flex-start; position: relative;" class="track topBorder_0 flex">
+                                <svg class="arrow">
+                                    <path d="M1 5 25 5 25 0 35 8 25 16 25 11 1 11Z" stroke="black" stroke-width="2"
+                                        fill="#ff9999"></path>
+                                </svg>
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0 player_1HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_1HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_1HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_1HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_1HomeColor"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                        </div>
+                        <div class="home">
+                            <svg class="homeSvg">
+                                <path class="player_1Home" d="M0 0 42 42 0 84.5"></path>
+                                <path class="player_2Home" d="M0 0 42 42 84.5 0"></path>
+                                <path class="player_3Home" d="M0 84.5 42 42 84.5 84.5"></path>
+                                <path class="player_4Home" d="M84.5 0 42 42 84.5 84.5"></path>
+                                <line x1="0" y1="0" x2="84.5" y2="84.5" stroke="#444444" stroke-width="2"></line>
+                                <line x1="0" y1="84.5" x2="84.5" y2="0" stroke="#444444" stroke-width="2"></line>
+                            </svg>
+                        </div>
+                        <div class="horizontalTracks">
+                            <div class="track"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0 flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track topBorder_0 player_4HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_4HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_4HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_4HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_4HomeColor"></div>
+                            <div style="justify-content: flex-end; position: relative;" class="track topBorder_0 leftBorder_0 flex">
+                                <svg class="arrow blueArrow">
+                                    <path d="M1 5 28 5 28 0 38 8 28 16 28 11 1 11Z" stroke="black" stroke-width="2"
+                                        fill="#9999ff"></path>
+                                </svg>
+                            </div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_4HomeColor flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                        </div>
+                    </div>
+                    <div style="align-items: flex-end;" class="flex">
+                        <div class="playersTokens player3 flex justifyCenter">
+                            <div class="tokenBox">
+                                <div style="background-color: var(--relatedToPlayer_3Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_3Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_3Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_3Color);" class="token"></div>
+                            </div>
+                        </div>
+                        <div class="verticalTrack_1">
+                            <div class="track"></div>
+                            <div class="track leftBorder_0 player_3HomeColor"></div>
+                            <div class="track leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_3HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_3HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div class="track topBorder_0 leftBorder_0 player_3HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0 flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 player_3HomeColor flex justifyCenter">
+                                <img class="stops" src="stops.svg">
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0 player_3HomeColor"></div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                            <div class="track topBorder_0"></div>
+                            <div style="justify-content: center; position: relative;" class="track topBorder_0 leftBorder_0 flex">
+                                <svg class="arrow greenArrow">
+                                    <path d="M1 5 28 5 28 0 38 8 28 16 28 11 1 11Z" stroke="black" stroke-width="2"
+                                        fill="#99ee99"></path>
+                                </svg>
+                            </div>
+                            <div class="track topBorder_0 leftBorder_0"></div>
+                        </div>
+                        <div class="playersTokens player4 flex justifyCenter">
+                            <div class="tokenBox">
+                                <div style="background-color: var(--relatedToPlayer_4Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_4Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_4Color);" class="token"></div>
+                                <div style="background-color: var(--relatedToPlayer_4Color);" class="token"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="players flex">
+                    <div class="player_N_D flex">
+                        <div class="dice flex justifyCenter">
+                            <div class="faces" title="Click to roll">
+                                <div class="face faceLeft">
+                                    <svg class="diceNumber">
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceRight">
+                                    <svg class="diceNumber">
+                                        <circle cx="7" cy="7" r="3" fill="black"></circle>
+                                        <circle cx="17" cy="17" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceTop">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBottom">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceFront">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBack">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="20" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="20" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <button class="ok flex justifyCenter">OK</button>
+                        </div>
+                        <div class="playerName flex justifyCenter">
+                            <div class="name" title="Double click to change">Player 3</div>
+                            <input class="input_name" id="input_p_3Name" type="text" placeholder="Enter Name">
+                        </div>
+                    </div>
+                    <div style="flex-direction: row-reverse;" class="player_N_D flex">
+                        <div class="dice flex justifyCenter">
+                            <div class="faces" title="Click to roll">
+                                <div class="face faceLeft">
+                                    <svg class="diceNumber">
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceRight">
+                                    <svg class="diceNumber">
+                                        <circle cx="7" cy="7" r="3" fill="black"></circle>
+                                        <circle cx="17" cy="17" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceTop">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBottom">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceFront">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="5" r="3" fill="black"></circle>
+                                        <circle cx="12" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="19" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="19" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                                <div class="face faceBack">
+                                    <svg class="diceNumber">
+                                        <circle cx="5" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="4" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="12" r="3" fill="black"></circle>
+                                        <circle cx="5" cy="20" r="3" fill="black"></circle>
+                                        <circle cx="19" cy="20" r="3" fill="black"></circle>
+                                    </svg>
+                                </div>
+                            </div>
+                            <button class="ok flex justifyCenter">OK</button>
+                        </div>
+                        <div class="playerName flex justifyCenter">
+                            <div class="name" title="Double click to change">Player 4</div>
+                            <input class="input_name" id="input_p_4Name" type="text" placeholder="Enter Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+
+</html>

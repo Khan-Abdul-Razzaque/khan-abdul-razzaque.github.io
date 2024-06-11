@@ -1,0 +1,110 @@
+.billing-content {
+    padding: 50px;
+}
+
+.billing-content h1 {
+    padding: 0 0 30px 15px;
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(15, 28, 60);
+}
+
+.billing-content h1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 17px;
+    width: 5px;
+    left: 0;
+    top: 4.5px;
+    background-color: blue;
+}
+
+.billing-detail {
+    width: 100%;
+    overflow: auto hidden;
+    text-wrap: nowrap;
+    scrollbar-width: none;
+
+}
+
+.billing-detail table {
+    width: 100%;
+    font-family: serif;
+    border-spacing: 0;
+    border-bottom: 2px solid gray;
+}
+
+.billing-detail table tr {
+    height: 40px;
+}
+
+.billing-detail table td {
+    width: calc(100% / 8);
+    text-align: start;
+    padding: 0 0 0 20px;
+}
+
+table tr:nth-child(1) {
+    background-color: rgba(88, 88, 88, 0.111);
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(15, 28, 60);
+}
+
+table tr:nth-child(2) {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(15, 28, 60);
+}
+
+table tr:nth-child(2):hover {
+    background-color: rgba(88, 88, 88, 0.111);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.next-page-container {
+    justify-content: flex-end;
+    padding: 18px 0;
+}
+
+.pages {
+    gap: 20px;
+}
+
+.pages button {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 7px;
+    font-family: serif;
+    cursor: not-allowed;
+}
+
+.pages .current-page {
+    border: 2px solid rgb(73, 161, 255);
+    color: rgb(73, 161, 255);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#bill-expired {
+    display: flex;
+    align-items: center;
+}
+
+#bill-expired::before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDE0IDEzIiBmaWxsPSJub25lIj4KICA8cGF0aAogICAgZD0iTTYuOTQ4OTQgMTEuODQzN0M0LjA0MTkxIDExLjg0MzcgMS42ODUzIDkuNDg3MDQgMS42ODUzIDYuNTgwMDRDMS42ODUzIDMuNjczMDIgNC4wNDE5MSAxLjMxNjQxIDYuOTQ4OTQgMS4zMTY0MUM5Ljg1NTk0IDEuMzE2NDEgMTIuMjEyNiAzLjY3MzAyIDEyLjIxMjYgNi41ODAwNEMxMi4yMTI2IDkuNDg3MDQgOS44NTU5NCAxMS44NDM3IDYuOTQ4OTQgMTEuODQzN1pNNi45NDg5NCAxMC43OTFDOS4yNzQ1NyAxMC43OTEgMTEuMTU5OCA4LjkwNTY4IDExLjE1OTggNi41ODAwNEMxMS4xNTk4IDQuMjU0NDIgOS4yNzQ1NyAyLjM2OTEzIDYuOTQ4OTQgMi4zNjkxM0M0LjYyMzMyIDIuMzY5MTMgMi43MzgwMyA0LjI1NDQyIDIuNzM4MDMgNi41ODAwNEMyLjczODAzIDguOTA1NjggNC42MjMzMiAxMC43OTEgNi45NDg5NCAxMC43OTFaTTYuOTQ4OTQgNS44MzU2Nkw4LjQzNzcxIDQuMzQ2ODdMOS4xODIwOSA1LjA5MTI2TDcuNjkzMzIgNi41ODAwNEw5LjE4MjA5IDguMDY4ODFMOC40Mzc3MSA4LjgxMzE5TDYuOTQ4OTQgNy4zMjQ0M0w1LjQ2MDE2IDguODEzMTlMNC43MTU3NyA4LjA2ODgxTDYuMjA0NTYgNi41ODAwNEw0LjcxNTc3IDUuMDkxMjZMNS40NjAxNiA0LjM0Njg3TDYuOTQ4OTQgNS44MzU2NloiCiAgICBmaWxsPSIjQzMyRTQ5IiAvPgo8L3N2Zz4K);
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 5px;
+}

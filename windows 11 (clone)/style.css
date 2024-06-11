@@ -1,0 +1,500 @@
+:root {
+    --main-bg-color: #264545;
+    --bg-color-1: rgb(42 42 42);
+    --bg-color-2: rgb(58 58 58);
+    --layer-1: -1;
+    --layer-2: 100;
+    --layer-3: 200;
+    --layer-4: 300;
+    --layer-5: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('win images/bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 7%;
+    overflow: auto hidden;
+}
+
+
+/* ------------------- Utility Classes --------------------- */
+
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+
+/* ------------------- Task Bar --------------------- */
+
+
+.taskBar {
+    position: absolute;
+    bottom: 0;
+    height: 46px;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    padding: 3px 0;
+    border-top: 1px solid rgb(55, 93, 93);
+    z-index: var(--layer-4);
+}
+
+.center-icons {
+    height: 100%;
+    gap: 5px;
+}
+
+.taskbar-icons {
+    height: 100%;
+    width: 39px;
+    /* background-color: yellow; */
+    /* border: 2px solid black; */
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.taskbar-icons::before {
+    content: "";
+    position: absolute;
+    height: 39px;
+    width: 39px;
+    background: transparent;
+    z-index: 100;
+    border: 1px solid #265050;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.taskbar-icons:hover {
+    background-color: #305555;
+}
+
+.taskbar-icons svg {
+    /* background-color: rgb(131, 131, 131); */
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    /* padding-top: 1px; */
+    /* border-radius: 2px; */
+}
+
+.windows-icon {
+    fill: rgb(0, 217, 255);
+    stroke-width: 0;
+}
+
+#f-svg-1 {
+    fill: #ffc400;
+}
+
+#f-svg-2 {
+    fill: rgb(174, 122, 0);
+}
+
+#f-svg-3 {
+    fill: rgb(37, 95, 255);
+}
+
+img {
+    user-select: none;
+}
+
+#brave-logo {
+    width: 90%;
+}
+
+.app-icon {
+    width: 100%;
+}
+
+#edge-logo {
+    width: 110%;
+}
+
+#chrome-logo {
+    width: 125%;
+}
+
+#vs-code-logo {
+    width: 100%;
+}
+
+.right-icons {
+    gap: 5px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    /* width: 100px; */
+    /* background-color: green; */
+    padding: 3px 0;
+    padding-right: 20px;
+}
+
+.r-i-logo {
+    height: 100%;
+    width: 33px;
+    /* background-color: red; */
+    padding: 8px 5px;
+    border-radius: 5px;
+}
+
+.r-i-logo:hover {
+    background-color: #305555;
+}
+
+.r-i-logo svg {
+    height: 100%;
+    width: 100%;
+    /* background-color: yellow; */
+}
+
+.w-v-b-icon {
+    height: 100%;
+    gap: 3px;
+    min-width: 0;
+    padding: 8px 6px;
+    border-radius: 5px;
+}
+
+.w-v-b-icon:hover {
+    background-color: #265050;
+}
+
+.w-v-b-icon svg {
+    height: 100%;
+    width: 25px;
+}
+
+
+/* ------------------- Start Menu --------------------- */
+
+
+.start-menu {
+    width: fit-content;
+    background-color: var(--main-bg-color);
+    border-radius: 15px;
+    color: rgb(200, 200, 200);
+    font-family: 'roboto';
+    /* border: 2px solid rgb(67, 102, 107); */
+    font-size: 14px;
+    position: absolute;
+    transition: bottom .15s ease-in-out;
+    bottom: 60px;
+    user-select: none;
+    bottom: -700px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--layer-3);
+}
+
+.s-m-row-1 {
+    padding: 40px;
+}
+
+.search-engine {
+    height: 100%;
+    width: 100%;
+    background-color: #222a2a;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: 1px solid rgb(105, 105, 105);
+}
+
+.search-engine:hover {
+    border-color: rgb(186, 186, 186);
+}
+
+.search-engine input {
+    width: 500px;
+    margin-left: 10px;
+    outline: 0;
+    border: 0;
+    /* border-radius: 60px; */
+    font-size: 16px;
+    background: transparent;
+    color: rgb(183, 183, 183);
+}
+
+.search-engine input::placeholder {
+    color: rgb(183, 183, 183);
+    font-size: 14px;
+}
+
+.search-icon {
+    height: 16px;
+    width: 16px;
+    /* padding: 3px 0; */
+    /* border: 1px solid black; */
+}
+
+
+.search-icon svg {
+    height: 100%;
+    width: 100%;
+}
+
+.apps-holder {
+    padding: 35px 0;
+    /* border: 2px solid black; */
+}
+
+.status {
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 500;
+    padding: 0 25px;
+}
+
+.status div {
+    padding: 5px;
+    background-color: rgb(57, 76, 83);
+    border-radius: 7px;
+    padding-left: 10px;
+    gap: 3px;
+}
+
+.status div:hover {
+    background-color: rgb(65, 86, 94);
+}
+
+.apps {
+    display: grid;
+    grid-template-columns: repeat(6, 86px);
+    /* border: 1px solid black; */
+    margin-bottom: 114px;
+    padding: 0 20px;
+}
+
+.app {
+    height: 86px;
+    width: 100%;
+    /* border: 1px solid red; */
+    flex-direction: column;
+    gap: 7px;
+    /* background-color: yellow; */
+    border-radius: 10px;
+}
+
+.app:hover {
+    background-color: #265050;
+}
+
+.app img {
+    width: 40%;
+}
+
+.recommend {
+    margin-bottom: 90px;
+    /* border: 2px solid black; */
+}
+
+.recommend p {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.s-m-row-2 {
+    border-top: 2px solid #40585f;
+    /* border: 2px solid green; */
+    padding: 10px 60px;
+    justify-content: space-between;
+    background-color: #264040;
+    border-radius: 0 0 15px 15px;
+}
+
+.user {
+    gap: 10px;
+    padding: 4px 7px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+
+.user:hover {
+    background-color: #265050;
+}
+
+.user img {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user span {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.power {
+    height: 45px;
+    width: 45px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.power:hover {
+    background-color: #265050;
+}
+
+
+/* ------------------- Notification Panel --------------------- */
+
+
+.notification-panel {
+    width: fit-content;
+    /* padding: 20px; */
+    background-color: var(--main-bg-color);
+    border-radius: 15px;
+    user-select: none;
+    font-family: 'roboto';
+    position: absolute;
+    bottom: 60px;
+    bottom: -375px;
+    right: 7px;
+    z-index: var(--layer-3);
+    transition: bottom .2s ease-in-out;
+}
+
+.np-top {
+    width: 370px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 10px;
+    padding: 20px;
+}
+
+.np-top-item {
+    height: 90px;
+    border-radius: 10px;
+    color: white;
+}
+
+.np-top-item > :first-child {
+    height: 55%;
+    width: 100%;
+    background-color: rgba(81, 114, 114, 0.261);
+    border: 3px solid rgb(59, 109, 113);
+    border-radius: 6px;
+    transition: background-color .1s ease-in-out, border .2s ease-in-out;
+}
+
+.np-top-item .white-line:hover {
+    background-color: rgba(72, 107, 107, 0.261);
+    border-color: rgba(72, 107, 107, 0.261);
+}
+
+.np-top-item .black-line:hover {
+    background-color: rgb(97, 171, 176);
+    border-color: rgba(59, 100, 100, 0.756);
+}
+
+.np-top-item > :first-child div {
+    height: 100%;
+    width: 50%;
+    /* padding: 16px 20px; */
+}
+
+.np-item-name {
+    height: 45%;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+}
+
+.np-top-item .white-line {
+    stroke: white;
+    fill: white;
+    stroke-width: 1px;
+}
+
+.np-top-item .black-line {
+    stroke: black;
+    fill: black;
+    background-color: rgb(110, 193, 199);
+    border-color: rgb(110, 193, 199);
+    stroke-width: 1px;
+}
+
+.volume-control {
+    height: 50px;
+    width: 100%;
+    /* background-color: red; */
+    padding: 0 20px;
+    gap: 10px;
+    margin: 20px 0 0;
+}
+
+.volume-control > div:first-child {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.volume-control > div:first-child:hover {
+    background-color: rgb(55, 86, 94);
+}
+
+.volume-bar {
+    position: relative;
+}
+
+.volume-bar div {
+    width: 265px;
+    height: 4px;
+    background-color: rgb(191, 237, 255);
+    border-radius: 8px;
+}
+
+#slider {
+    transition: .2s ease-in-out;
+}
+
+.volume-bar svg {
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    position: absolute;
+    left: 30%;
+}
+
+.volume-bar svg:hover #slider {
+    r: 8px
+}
+
+.np-bottom {
+    margin-top: 40px;
+    height: 50px;
+    width: 100%;
+    background-color: #264040;
+    border-radius: 0 0 15px 15px;
+    color: white;
+    padding: 3px 10px;
+}
+
+.battery-percent {
+    height: 90%;
+    width: fit-content;
+    padding: 0 15px;
+    border-radius: 10px;
+    gap: 3px;
+    font-size: 14px;
+}
+
+.battery-percent:hover {
+    background-color: #265050;
+}

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Windows 11 in the browser</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            /* background-color: red; */
+            /* border: 2px solid red; */
+            height: calc(100vh - 46px);
+            color: white;
+        }
+
+        .this-pc {
+            min-width: 1200px;
+            min-height: 500px;
+            height: 500px;
+            width: fit-content;
+            border: 1px solid rgb(50 50 50);
+            background-color: rgb(24 24 24);
+            border-radius: 10px;
+            user-select: none;
+            color: white;
+        }
+
+        .header {
+            height: 45px;
+            border-radius: 7px 7px 0 0;
+            justify-content: space-between;
+            user-select: none;
+        }
+
+        .tabs {
+            justify-content: space-between;
+            /* border: 2px solid yellow; */
+            height: 100%;
+            align-self: flex-end;
+            border-radius: 5px 5px 0 0;
+            gap: 3px;
+            align-items: flex-end;
+            padding: 0 12px;
+            user-select: none;
+        }
+
+        .tab {
+            justify-content: space-between;
+            width: 250px;
+            height: 80%;
+            /* border: 1px solid black; */
+            padding: 0 7px;
+            border-radius: 8px 8px 0 0;
+            background-color: var(--bg-color-1);
+            color: white;
+            font-family: 'roboto';
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 14px;
+            user-select: none;
+        }
+
+        .home-icon {
+            gap: 5px;
+            margin-top: 3px;
+            color: white;
+            font-family: 'roboto';
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .close-tab,
+        .more-tabs {
+            height: 28px;
+            width: 28px;
+            border-radius: 6px;
+        }
+
+        .close-tab:hover {
+            background-color: rgb(74, 74, 74);
+        }
+
+        .more-tabs:hover {
+            background-color: rgb(62, 59, 59);
+        }
+
+        .right-header {
+            align-self: flex-start;
+            gap: 10px;
+        }
+
+        .right-header div {
+            height: 35px;
+            width: 55px;
+        }
+
+        #close-window:hover {
+            background-color: rgba(255, 0, 0, 0.688);
+        }
+
+        #minimize:hover,
+        #maximize:hover {
+            background-color: rgb(62, 59, 59);
+        }
+
+        .controls {
+            height: 45px;
+            /* width: 1000px; */
+            background-color: var(--bg-color-1);
+            padding: 0 15px;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .cont-left {
+            gap: 20px;
+            stroke: rgb(210, 210, 210);
+        }
+
+        .cont-left div {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            stroke: rgb(210, 210, 210);
+        }
+
+        .cont-left div:hover {
+            background-color: rgb(60, 60, 60);
+        }
+
+        .cont-middle {
+            height: 75%;
+            width: calc((100% - 180px) * 70 / 100);
+            background-color: var(--bg-color-2);
+            padding: 0 10px;
+            border-radius: 7px;
+            color: white;
+            stroke: white;
+            position: relative;
+
+        }
+
+        .cont-middle div:first-child {
+            stroke: white;
+            margin-top: 5px;
+            color: white;
+        }
+
+        .home-search {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 7px;
+            z-index: var(--layer-1);
+            background-color: transparent;
+        }
+
+        .home-search input {
+            width: calc(100% - 35px);
+            height: 100%;
+            border: 0;
+            outline: 0;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 5px;
+            border-radius: inherit;
+            color: white;
+            background-color: rgb(24 24 24);
+        }
+
+        .home-search input::placeholder {
+            color: rgb(191, 191, 191);
+        }
+
+        .home-search div {
+            height: 25px;
+            width: 25px;
+            border-radius: 7px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        .home-search div:hover {
+            background-color: rgb(62, 59, 59);
+        }
+
+        .c-m-span {
+            padding: 3px 12px;
+            border-radius: 5px;
+            margin-bottom: 4px;
+        }
+
+        .c-m-span:hover {
+            background-color: #444444;
+        }
+
+        .cont-right {
+            height: 75%;
+            width: calc((100% - 180px) * 30 / 100);
+            padding: 0 0 0 10px;
+            border-radius: 7px;
+            background-color: var(--bg-color-2);
+            font-family: 'roboto';
+        }
+
+        .cont-right input {
+            width: calc(100% - (30px));
+            font-size: 14px;
+            outline: 0;
+            border: 0;
+            background-color: transparent;
+            padding: 5px 0;
+            color: white;
+        }
+
+        .cont-right input::placeholder {
+            color: rgb(212, 212, 212);
+        }
+
+        .cont-right div {
+            height: 30px;
+            width: 30px;
+        }
+
+        .border {
+            border: .5px solid gray;
+            border-bottom: 2px solid #1395a4;
+            background-color: rgb(24 24 24);
+        }
+
+        .navigation-pane {
+            height: 45px;
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            padding: 0 10px;
+            border-top: 1px solid rgb(66, 66, 66);
+            border-bottom: 1px solid rgb(66, 66, 66);
+        }
+
+        .nav-box {
+            height: 70%;
+            padding: 0 5px;
+        }
+
+        .n-box-1 {
+            gap: 5px;
+            font-family: 'roboto';
+            font-weight: 500;
+            height: 100%;
+            background-color: blue;
+            border-radius: 5px;
+            padding: 0 3px
+        }
+
+        .this-pc-content {
+            height: calc(100% - 135px);
+        }
+
+        .this-pc-left-content {
+            width: 250px;
+            background-color: rgba(255, 0, 0, 0.182);
+            height: calc(100%);
+            border-right: 2px solid white;
+            overflow: hidden auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ----------------- Task Bar ----------------- -->
+    <div class="taskBar flex align-center justify-center">
+        <div class="center-icons flex align-center justify-center">
+            <div id="windows" class="taskbar-icons flex align-center justify-center">
+                <svg>
+                    <path class="windows-icon" d="M0 0 11 0 11 11 0 11 0 0"></path>
+                    <path class="windows-icon" d="M12 0 23 0 23 11 12 11"></path>
+                    <path class="windows-icon" d="M0 12 11 12 11 23 0 23"></path>
+                    <path class="windows-icon" d="M12 12 23 12 23 23 12 23"></path>
+                </svg>
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <svg>
+                    <path id="f-svg-1" d="M0 4 23 4 23 21 0 21 0 4"></path>
+                    <path id="f-svg-2" d="M0 2 8 2 10 4 8 6 0 6 0 1"></path>
+                    <path id="f-svg-3" d="M5 21 5 15 18 15 18 21"></path>
+                </svg>
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <img id="brave-logo" src="win images/brave-logo.png">
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <img id="edge-logo" src="win images/edge.png">
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <img id="chrome-logo" src="win images/chrome.png">
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <img id="vs-code-logo" src="win images/vs code.webp">
+            </div>
+            <div class="taskbar-icons flex align-center justify-center">
+                <svg>
+                    <path d="M4 12 15 12 15 22 4 22 4 12" fill="red"></path>
+                    <path d="M15 12 18 7 18 17 15 22 15 12" fill="#00ff00"></path>
+                    <path d="M4 12 15 12 18 7 8 7 4 12" fill="blue"></path>
+                    <path d="M8 7 8 3" stroke="black" stroke-width="1" fill="none"></path>
+                    <path d="M8 3 3 3 8 3 8 2 4 1 9 2 9 4 4 5 8 4" stroke="yellow" stroke-width="1" fill="none">
+                    </path>
+                    <path d="M17 14 19 14" stroke="black" stroke-width="1" fill="none"></path>
+                    <Path d="M19 14 19 13 22 12 19 13 19 15 22 16 19 15 19 14 23 14" stroke="yellow" stroke-width="1"
+                        fill="none"></Path>
+                </svg>
+            </div>
+        </div>
+        <div class="right-icons flex align-center justify-center">
+            <div class="r-i-logo flex align-center justify-center">
+                <svg class="hidden-icons">
+                    <path d="M6 15 12 9 18 15" stroke="white" stroke-width="1" fill="none" stroke-linejoin="round">
+                    </path>
+                </svg>
+            </div>
+            <div class="r-i-logo">
+                <svg class="keyboard">
+                    <path id="k-svg-1" d="M2 4 21 4 21 16 2 16 2 4 M4 13 19 13" stroke="white" stroke-width="1"
+                        fill="none" stroke-linejoin="round"></path>
+                    <circle cx="8" cy="10" r="1" fill="white"></circle>
+                    <circle cx="11.5" cy="10" r="1" fill="white"></circle>
+                    <circle cx="15" cy="10" r="1" fill="white"></circle>
+                    <circle cx="6" cy="7" r="1" fill="white"></circle>
+                    <circle cx="9.5" cy="7" r="1" fill="white"></circle>
+                    <circle cx="13" cy="7" r="1" fill="white"></circle>
+                    <circle cx="16.5" cy="7" r="1" fill="white"></circle>
+                </svg>
+            </div>
+            <div class="w-v-b-icon flex align-center justify-center">
+                <svg class="wifi">
+                    <circle cx="12.5" cy="16" r="1" fill="white"></circle>
+                    <path d="M9 14 C9 14 12.5 10 16 14" stroke="white" stroke-width="1" fill="none"></path>
+                    <path d="M6.5 12 C6.5 12 12.5 5 18.5 12" stroke="white" stroke-width="1" fill="none"></path>
+                    <path d="M4 10 C4 10 12.5 0 21 10" stroke="white" stroke-width="1" fill="none"></path>
+                </svg>
+                <svg class="volume">
+                    <path d="M3 8 8 8 12 4 12 16 8 12 3 12 3 8" stroke="white" stroke-width="1" fill="none"
+                        stroke-linejoin="round"></path>
+                    <path d="M14 7 C14 7 17 9.5 14 13" stroke="white" stroke-width="1" fill="none"></path>
+                    <path d="M16 4.5 C16 4.5 21 9.5 16 15.5" stroke="white" stroke-width="1" fill="none"></path>
+                    <path d="M18 2.5 C18 2.5 25 9.5 18 17.5" stroke="white" stroke-width="1" fill="none"></path>
+                </svg>
+                <svg class="battery">
+                    <path d="M4 5 20 5 20 15 4 15 4 5" stroke="white" stroke-width="1" fill="none"
+                        stroke-linejoin="round"></path>
+                    <path d="M6 7 16 7 16 13 6 13 6 7" stroke="white" stroke-width="1" fill="white"
+                        stroke-linejoin="round"></path>
+                    <path d="M20 8 22.5 8 22.5 12 20 12 20 8" stroke="white" stroke-width="1" fill="white"
+                        stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="r-i-logo">
+                <svg>
+                    <path d="M3 16 6 13 V 8 C6 4 13 1 15 8 V 13 L18 16 3 16 M14 16 C14 16 11 23 7 16" stroke="white"
+                        stroke-width="1" fill="none" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------- Start Menu ----------------- -->
+    <div class="start-menu">
+        <div class="s-m-row-1">
+            <div class="search-engine flex align-center">
+                <div class="search-icon">
+                    <svg>
+                        <circle cx="6" cy="6" r="5" stroke="#ffffff" stroke-width="2" fill="none"></circle>
+                        <line x1="9.5" y1="9.5" x2="15" y2="16" stroke="#ffffff" stroke-width="2" fill="none">
+                        </line>
+                    </svg>
+                </div>
+                <input type="text" placeholder="Search for app, settings, and documents">
+            </div>
+            <div class="apps-holder">
+                <div class="status flex align-center">
+                    <span>Pinned</span>
+                    <div class="flex align-center">
+                        <span>All apps</span>
+                        <svg style="width: 19px; height: 19px;">
+                            <path d="M7 4 11 9 7 14" stroke="#c7c7c7" fill="none"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="apps">
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/edge.png" alt="">
+                        <span>Edge</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/ms-word.webp" alt="">
+                        <span>Word</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/ms-excel.svg" alt="">
+                        <span>Excel</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/ms-onenote.svg" alt="">
+                        <span>OneNote</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/setting-ixon.png" alt="">
+                        <span>Settings</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/ms-powerpoint.svg" alt="">
+                        <span>PowerPoint</span>
+                    </div>
+                    <div class="app flex align-center justify-center">
+                        <img src="win images/file-explorer.png" alt="">
+                        <span>File Explorer</span>
+                    </div>
+                </div>
+                <div class="status recommend">
+                    <span>Recommended</span>
+                    <p>The more you use your device, The more we'll show your new apps here.</p>
+                </div>
+            </div>
+        </div>
+        <div class="s-m-row-2 flex align-center">
+            <div class="user flex align-center">
+                <img src="win images/user-logo.jpg">
+                <span>A.R.Khan</span>
+            </div>
+            <div class="power">
+                <svg style="height: 100%; width: 100%">
+                    <circle cx="12.5" cy="13.5" r="7" stroke="white" fill="none" stroke-width="2"></circle>
+                    <line x1="12.5" y1="10.5" x2="12.5" y2="3" stroke="white" fill="none" stroke-width="2"></line>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------- Notification Panel ----------------- -->
+    <div class="notification-panel">
+        <div>
+            <div class="np-top">
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center justify-center">
+                        <div class="flex align-center justify-center"
+                            style="border-right: 2px solid rgb(59, 109, 113);">
+                            <svg style="height: 23px; width: 25px;">
+                                <circle cx="12.5" cy="16" r="1"></circle>
+                                <path d="M9 14 C9 14 12.5 10 16 14" fill="none">
+                                </path>
+                                <path d="M6.5 12 C6.5 12 12.5 5 18.5 12" fill="none">
+                                </path>
+                                <path d="M4 10 C4 10 12.5 0 21 10" fill="none"></path>
+                            </svg>
+                        </div>
+                        <div class="flex align-center justify-center">
+                            <svg style="width: 19px; height: 19px;">
+                                <path d="M7 4 11 9 7 14" fill="none"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>AP-5G</span>
+                    </div>
+                </div>
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center">
+                        <div class="flex align-center justify-center"
+                            style="border-right: 2px solid rgb(59, 109, 113);">
+                            <svg style="height: 23px; width: 25px;">
+                                <path d="M5 10 17.5 16 10.5 21.5 10.5 3 17.5 8 5 16" fill="none"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                        <div class="flex align-center justify-center">
+                            <svg style="width: 19px; height: 19px;">
+                                <path d="M7 4 11 9 7 14" fill="none"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>Bluetooth</span>
+                    </div>
+                </div>
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center justify-center">
+                        <svg style="height: 23px; width: 25px;">
+                            <path
+                                d="M2.5 8 2.5 16 5 14 10 14 C10 14 11.5 15 8 20 C8 20 13 17 13 14 L20 14 C20 14 23 12 20 10 L13 10 C12 10 15 10 9 3 C9 3 12 10 9 10 L5 10 2.5 8"
+                                fill="none" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>Airplane Mode</span>
+                    </div>
+                </div>
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center justify-center">
+                        <svg style="height: 23px; width: 25px;">
+                            <path
+                                d="M2.5 8 2.5 16 5 14 10 14 C10 14 11.5 15 8 20 C8 20 13 17 13 14 L20 14 C20 14 23 12 20 10 L13 10 C12 10 15 10 9 3 C9 3 12 10 9 10 L5 10 2.5 8"
+                                fill="none" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>Airplane Mode</span>
+                    </div>
+                </div>
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center justify-center">
+                        <svg style="height: 23px; width: 25px;">
+                            <path
+                                d="M2.5 8 2.5 16 5 14 10 14 C10 14 11.5 15 8 20 C8 20 13 17 13 14 L20 14 C20 14 23 12 20 10 L13 10 C12 10 15 10 9 3 C9 3 12 10 9 10 L5 10 2.5 8"
+                                fill="none" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>Airplane Mode</span>
+                    </div>
+                </div>
+                <div class="np-top-item">
+                    <div class="np-top-item-icon white-line flex align-center justify-center">
+                        <svg style="height: 23px; width: 25px;">
+                            <path
+                                d="M2.5 8 2.5 16 5 14 10 14 C10 14 11.5 15 8 20 C8 20 13 17 13 14 L20 14 C20 14 23 12 20 10 L13 10 C12 10 15 10 9 3 C9 3 12 10 9 10 L5 10 2.5 8"
+                                fill="none" stroke-linejoin="round"></path>
+                        </svg>
+                    </div>
+                    <div class="np-item-name flex align-center justify-center">
+                        <span>Airplane Mode</span>
+                    </div>
+                </div>
+            </div>
+            <div class="volume-control flex align-center">
+                <div class="flex align-center justify-center">
+                    <svg style="width: 25px; height: 22px;">
+                        <path d="M3 8 8 8 12 4 12 16 8 12 3 12 3 8" stroke="white" fill="none" stroke-linejoin="round">
+                        </path>
+                        <path d="M14 7 C14 7 17 9.5 14 13" stroke="white" fill="none"></path>
+                        <path d="M16 4.5 C16 4.5 21 9.5 16 15.5" stroke="white" fill="none"></path>
+                        <path d="M18 2.5 C18 2.5 25 9.5 18 17.5" stroke="white" fill="none"></path>
+                    </svg>
+                </div>
+                <div class="volume-bar flex align-center">
+                    <div></div>
+                    <svg>
+                        <circle id="slider" cx="9" cy="9" r="6" fill="#808080"></circle>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="np-bottom flex align-center">
+            <div class="battery-percent flex align-center justify-center">
+                <svg style="width: 25px; height: 23px; padding-top: 2px">
+                    <path d="M4 5 20 5 20 15 4 15 4 5" stroke="white" fill="none" stroke-linejoin="round"></path>
+                    <path d="M6 7 16 7 16 13 6 13 6 7" stroke="white" fill="white" stroke-linejoin="round"></path>
+                    <path d="M20 8 22.5 8 22.5 12 20 12 20 8" stroke="white" fill="white" stroke-linejoin="round">
+                    </path>
+                </svg>
+                <span>100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------- File Explorer ----------------- -->
+    <div class="container flex align-center justify-center">
+
+        <!-- ----------------- This PC ----------------- -->
+        <div class="this-pc">
+
+            <!-- ----------------- Header ----------------- -->
+            <div class="header flex align-center">
+                <div class="tabs flex">
+                    <div class="tab flex align-center">
+                        <div class="home-icon flex align-center">
+                            <svg style="height: 26px; width: 24px; padding: 2px 0; margin-bottom: 5px">
+                                <path d="M5 20 5 10 12 5 19 10 19 20 14.5 20 14.5 12 9.5 12 9.5 20 5 20"
+                                    stroke="#a2a2a2" fill="#a2a2a2" stroke-linejoin="round"></path>
+                                <path d="M4.7 10 12 4 19.3 10" stroke="#ce3a0c" stroke-width="2.5" fill="none"
+                                    stroke-linejoin="round"></path>
+                                <circle cx="4.7" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                                <circle cx="19.3" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                            </svg>
+                            <span>Home</span>
+                        </div>
+                        <div class="close-tab flex align-center justify-center">
+                            <svg style="height: 24px; width: 24px;">
+                                <line x1="7" y1="7" x2="17" y2="17" stroke="white" stroke-width="1"></line>
+                                <line x1="17" y1="7" x2="7" y2="17" stroke="white" stroke-width="1"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 4px;" class="more-tabs flex align-center justify-center">
+                        <svg style="height: 24px; width: 24px; transform: rotate(45deg);">
+                            <line x1="7" y1="7" x2="17" y2="17" stroke="white" stroke-width="1"></line>
+                            <line x1="17" y1="7" x2="7" y2="17" stroke="white" stroke-width="1"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="right-header flex">
+                    <div id="minimize" class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px;">
+                            <line x1="5" y1="10" x2="15" y2="10" stroke="white" stroke-width="1"></line>
+                        </svg>
+                    </div>
+                    <div id="maximize" class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px;">
+                            <rect width="10" height="10" x="5" y="5" stroke="white" stroke-width="1" fill="none">
+                            </rect>
+                        </svg>
+                    </div>
+                    <div style="border-top-right-radius: 10px;" id="close-window"
+                        class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px;">
+                            <line x1="5" y1="5" x2="15" y2="15" stroke="white" stroke-width="1"></line>
+                            <line x1="15" y1="5" x2="5" y2="15" stroke="white" stroke-width="1"></line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----------------- Controls ----------------- -->
+            <div class="controls flex align-center">
+                <div class="cont-left flex">
+                    <div class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px; transform: rotateY(180deg)">
+                            <line x1="5" y1="10" x2="15" y2="10" stroke-width="1.5"></line>
+                            <line x1="15" y1="10.5" x2="10" y2="5" stroke-width="1.5"></line>
+                            <line x1="15" y1="9.5" x2="10" y2="15" stroke-width="1.5"></line>
+                        </svg>
+                    </div>
+                    <div class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px;">
+                            <line x1="5" y1="10" x2="15" y2="10" stroke-width="1.5"></line>
+                            <line x1="15" y1="10.5" x2="10" y2="5" stroke-width="1.5"></line>
+                            <line x1="15" y1="9.5" x2="10" y2="15" stroke-width="1.5"></line>
+                        </svg>
+                    </div>
+                    <div class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px; transform: rotateZ(-90deg)">
+                            <line x1="5" y1="10" x2="15" y2="10" stroke-width="1.5"></line>
+                            <line x1="15" y1="10.5" x2="10" y2="5" stroke-width="1.5"></line>
+                            <line x1="15" y1="9.5" x2="10" y2="15" stroke-width="1.5"></line>
+                        </svg>
+                    </div>
+                    <div class="flex align-center justify-center">
+                        <svg style="height: 20px; width: 20px;">
+                            <circle cx="10" cy="10" r="5" stroke-width="1.5" fill="none"></circle>
+                            <line x1="14.7" y1="8" x2="14.7" y2="4" stroke-width="1.5"></line>
+                            <line x1="14.7" y1="8" x2="11" y2="8" stroke-width="1.5"></line>
+                        </svg>
+                    </div>
+                </div>
+                <div class="cont-middle flex align-center">
+                    <div class="flex align-center">
+                        <span>
+                            <svg style="height: 26px; width: 24px; padding: 2px 0; margin-bottom: 5px">
+                                <path d="M5 20 5 10 12 5 19 10 19 20 14.5 20 14.5 13 9.5 13 9.5 20 5 20" fill="none"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                        <span class="c-m-span">
+                            <svg style="height: 11px; width: 7px;">
+                                <line x1="6" y1="5.5" x2="1" y2="0" stroke-width="1.5"></line>
+                                <line x1="6" y1="4.5" x2="1" y2="10" stroke-width="1.5"></line>
+                            </svg>
+                        </span>
+                        <span class="c-m-span" style="font-size: 14px; font-family: 'roboto'; color: white;">Home</span>
+                        <span class="c-m-span">
+                            <svg style="height: 11px; width: 7px;">
+                                <line x1="6" y1="5.5" x2="1" y2="0" stroke-width="1.5"></line>
+                                <line x1="6" y1="4.5" x2="1" y2="10" stroke-width="1.5"></line>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="home-search flex align-center">
+                        <input type="text" placeholder=" Home">
+                        <div class="flex">
+                            <svg style="height: 24px; width: 24px;">
+                                <line x1="7" y1="7" x2="17" y2="17" stroke="white" stroke-width="1"></line>
+                                <line x1="17" y1="7" x2="7" y2="17" stroke="white" stroke-width="1"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont-right flex align-center">
+                    <input type="text" placeholder=" Search Home">
+                    <div class="flex align-center justify-center">
+                        <svg style="height: 17px; width: 16px">
+                            <circle cx="6" cy="6" r="5" stroke="#ffffff" stroke-width="2" fill="none"></circle>
+                            <line x1="9.5" y1="9.5" x2="15" y2="16" stroke="#ffffff" stroke-width="2" fill="none">
+                            </line>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ----------------- Navigation Panel ----------------- -->
+            <div class="navigation-pane flex align-center">
+                <!-- <div class="nav-box flex align-center">
+                        <div class="n-box-1 flex align-center">
+                            <span>
+                                <svg style="height: 20px; width: 20px;">
+                                    <circle cx="10" cy="10" r="8" stroke="#cccccc" fill="none" stroke-width="1.5">
+                                    </circle>
+                                    <line x1="5" y1="10" x2="15" y2="10" stroke="#009090" stroke-width="1.5"></line>
+                                    <line x1="10" y1="5" x2="10" y2="15" stroke="#009090" stroke-width="1.5"></line>
+                                </svg>
+                            </span>
+                            <span>New</span>
+                            <span>
+                                <svg style="height: 20px; width: 20px; transform: rotate(90deg);">
+                                    <line x1="15" y1="10.5" x2="10" y2="5" stroke-width="1.5" stroke="white"></line>
+                                    <line x1="15" y1="9.5" x2="10" y2="15" stroke-width="1.5" stroke="white"></line>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="nav-box flex align-center">
+                        <div class="n-box-2 flex align-cneter">
+                            <span>
+                                <svg style="height: 24px; width: 20px; background-color: black">
+                                    <circle cx="6.5" cy="17" r="2" fill="none" stroke="white" stroke-width="1.5">
+                                    </circle>
+                                    <circle cx="13.5" cy="17" r="2" fill="none" stroke="white" stroke-width="1.5">
+                                    </circle>
+                                    <line x1="7" y1="16" x2="14.5" y2="5" stroke="white" stroke-width="1.5"></line>
+                                    <line x1="13" y1="16" x2="5.5" y2="5" stroke="white" stroke-width="1.5"></line>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg style="height: 24px; width: 20px; background-color: black">
+                                    <path d="M11.5 16 11.5 18 4.5 18 4.5 7.5 8.5 7.5" stroke="white" fill="none"
+                                        stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <path d="M8.5 8 8.5 16 15.5 16 15.5 6 8.5 6 8.5 8" stroke="white" fill="none"
+                                        stroke-width="1.5" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                            <span>
+                                <svg style="height: 24px; width: 20px; background-color: black">
+                                    <path d="M14 4 17 4 17 8 M17 20 17 22 3 22 3 4 6 4" stroke="white" fill="none"
+                                        stroke-width="1.5" stroke-linejoin="round"></path>
+                                    <circle style="transform: rotateX(60deg);" cx="10" cy="8" r="4" stroke="white" fill="none"
+                                        stroke-width="1.5"
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="nav-box flex align-center"></div>
+                    <div class="nav-box flex align-center"></div> -->
+            </div>
+            <!-- ----------------- This PC Content ----------------- -->
+            <div class="this-pc-content">
+                <div class="this-pc-left-content">
+                    <div class="tpclc-1">
+                        <div class="flex align-center">
+                            <svg style="height: 26px; width: 24px; padding: 2px 0; margin-bottom: 5px">
+                                <path d="M5 20 5 10 12 5 19 10 19 20 14.5 20 14.5 12 9.5 12 9.5 20 5 20"
+                                    stroke="#a2a2a2" fill="#a2a2a2" stroke-linejoin="round"></path>
+                                <path d="M4.7 10 12 4 19.3 10" stroke="#ce3a0c" stroke-width="2.5" fill="none"
+                                    stroke-linejoin="round"></path>
+                                <circle cx="4.7" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                                <circle cx="19.3" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                            </svg>
+                            <span>Home</span>
+                        </div>
+                        <div class="flex align-center">
+                            <svg style="height: 26px; width: 24px; padding: 2px 0; margin-bottom: 5px">
+                                <path d="M5 20 5 10 12 5 19 10 19 20 14.5 20 14.5 12 9.5 12 9.5 20 5 20"
+                                    stroke="#a2a2a2" fill="#a2a2a2" stroke-linejoin="round"></path>
+                                <path d="M4.7 10 12 4 19.3 10" stroke="#ce3a0c" stroke-width="2.5" fill="none"
+                                    stroke-linejoin="round"></path>
+                                <circle cx="4.7" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                                <circle cx="19.3" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                            </svg>
+                            <span>Home</span>
+                        </div>
+                        <div class="flex align-center">
+                            <svg style="height: 26px; width: 24px; padding: 2px 0; margin-bottom: 5px">
+                                <path d="M5 20 5 10 12 5 19 10 19 20 14.5 20 14.5 12 9.5 12 9.5 20 5 20"
+                                    stroke="#a2a2a2" fill="#a2a2a2" stroke-linejoin="round"></path>
+                                <path d="M4.7 10 12 4 19.3 10" stroke="#ce3a0c" stroke-width="2.5" fill="none"
+                                    stroke-linejoin="round"></path>
+                                <circle cx="4.7" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                                <circle cx="19.3" cy="10" r="1.25" fill="#ce3a0c"></circle>
+                            </svg>
+                            <span>Home</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="this-pc-right-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="khan"></div>
+</body>
+<script src="script.js"></script>
+
+</html>

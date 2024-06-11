@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="b.css">
+    <style>
+        .devices-content {
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content-left {
+            padding: 30px 25px 30px 30px;
+            width: 250px;
+            min-height: calc(100vh - 70px);
+            border-right: 1px solid black;
+            display: none;
+        }
+
+        .cl-header button {
+            /* padding: 30px 20px 30px 30px; */
+            width: 100%;
+            padding: 2px;
+            margin: 10px 0 30px 0;
+            font-size: 16px;
+            justify-content: center;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .group-status ul {
+            list-style: none;
+            /* border: thin dotted red; */
+            width: 100%;
+        }
+
+        .group-status ul li {
+            padding: 7px;
+            margin-bottom: 10px;
+        }
+
+        .group-status ul li:hover {
+            background-color: rgb(237, 242, 250);
+        }
+
+        .content-right {
+            /* width: calc(100% - 250px); */
+            width: 100%;
+            border: 2px solid black;
+            min-height: calc(100vh - 70px);
+            padding: 25px 30px 30px 30px;
+        }
+
+        .cr-header {
+            padding-bottom: 20px;
+        }
+
+        .device {
+            gap: 15px;
+        }
+
+        .device input {
+            width: 250px;
+            padding: 10px;
+            font-size: 16px;
+            outline: 0;
+        }
+
+        .system,
+        .status {
+            width: 200px;
+            border: 1px solid rgb(203, 228, 228);
+            padding: 10px;
+        }
+
+        .device button {
+            width: 39px;
+            height: 39px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex-disp">
+        <div class="nav-left">
+            <img src="Avica Images/logo.svg" alt="">
+        </div>
+        <div class="nav-right flex-disp">
+            <div class="web-app flex-disp">
+                <img src="Avica Images/world_icon.svg">
+                Open web app (beta)
+            </div>
+            <button class="download-btn flex-disp">
+                <img src="Avica Images/install.svg">
+                Download
+            </button>
+            <img src="https://console.avica.link/static/media/bell-icon.bcd7db9348fe107becd1e799464bca38.svg">
+            <div class="user-icon flex-disp">
+                <div class="flex-disp">A</div>
+                <div class="expand-more flex-disp">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="arrow">
+                        <g id="Frame">
+                            <path id="Vector"
+                                d="M8.00028 8.7809L11.3001 5.48104L12.2429 6.42384L8.00028 10.6665L3.75761 6.42384L4.70041 5.48104L8.00028 8.7809Z"
+                                fill="#7F8C99"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container flex-disp">
+
+        <!-- ------------- Side Bar ------------- -->
+
+        <div class="side-bar">
+            <a href="index.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/home.b81a00607916a8b060aadd0fdf2e974e.svg">
+                <span>Home</span>
+            </a>
+            <a href="profile.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/profile.89e93ecd0d8cd17e98d5adc7e20a86c8.svg">
+                <span>My Profile</span>
+            </a>
+            <a href="license.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/manage-sub.217f11aaa45f6232fd35750ea086d271.svg">
+                <span>Manage Sub</span>
+            </a>
+            <a href="billing.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/billing.bf3d4d02b552d04dbedec67a7849645c.svg">
+                <span>Billing</span>
+            </a>
+            <a href="redeem-code.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/redeem-code.48fee4fb0c35b0c962d84fbaa7c1c249.svg">
+                <span>Redeem Code</span>
+            </a>
+            <a href="sessions.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/sessions.0d7cfe95a9cfbd8aa72b86e42b16fdb4.svg">
+                <span>Sessions</span>
+            </a>
+            <a href="devices.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/devices.a1639f58bc994bfd1353515092f64777.svg">
+                <span>Devices</span>
+            </a>
+            <a href="security.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/security.e6363b08f1e275119f7fe0cd4c3447d7.svg">
+                <span>Security</span>
+            </a>
+        </div>
+
+        <!-- ------------- Main Content ------------- -->
+
+        <div class="content device-content">
+            <div class="content-left">
+                <div class="cl-header">
+                    <h2>Group</h2>
+                    <button class="flex-disp"><img style="margin-right: 10px;"
+                            src="https://console.avica.link/static/media/icon-add.6ce0058b2ac313f90529cbf9f40feef5.svg">Add
+                        group</button>
+                </div>
+                <div class="group-status">
+                    <ul>
+                        <li>All Devices (1)</li>
+                        <li>My Devices (1)</li>
+                        <li>Default (0)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-right">
+                <h2 class="cr-header">Devices</h2>
+                <div class="device flex-disp">
+                    <input type="text" placeholder="Please enter Avica ID">
+                    <div class="system">System
+                        <!-- <div class="device-name">
+                            <div>Windows</div>
+                            <div>macOS</div>
+                            <div>Android</div>
+                            <div>iOS</div>
+                        </div> -->
+                    </div>
+                    <div class="status">
+                        Status
+                        <!-- <div class="status-options">
+                            <div>Online</div>
+                            <div>Offline</div>
+                        </div> -->
+                    </div>
+                    <button>
+                        <img
+                            src="	https://console.avica.link/static/media/search-gray.4116f8bd032df1229e93ef074cabdb49.svg">
+                    </button>
+                </div>
+                <div class="content billing-content">
+                    <div class="billing-heading">
+                        <h1>Billing</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

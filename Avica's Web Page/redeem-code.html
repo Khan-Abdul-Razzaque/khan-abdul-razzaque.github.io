@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddem Code</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .redeem-content {
+            padding: 0 30px;
+        }
+
+        .redeem-box1 {
+            height: fit-content;
+            width: fit-content;
+            margin: 30px auto 0;
+            padding: 130px 10px 10px 10px;
+            flex-direction: column;
+            background-image: url(https://console.avica.link/static/media/coupons.9d3b58116ffe7301a99e6725b305d386.svg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            margin-bottom: 30px;
+        }
+
+        .red-member p {
+            font-size: 32px;
+            font-weight: 500;
+            font-family: Helvetica, Arial, sans-serif;
+            margin-bottom: 30px;
+        }
+
+        .red-member>img:nth-child(1) {
+            margin: 0 20px 20px 0;
+
+        }
+
+        .red-member>img:nth-child(3) {
+            margin: 0 0 55px 13px;
+        }
+
+        .redeem-code input {
+            width: 400px;
+            padding: 10px;
+            margin-right: 20px;
+            border-radius: 3px;
+            border: 1px solid rgba(122, 176, 195, 0.331);
+            font-family: serif;
+        }
+
+        .redeem-code input::placeholder {
+            color: rgba(128, 128, 128, 0.422);
+        }
+
+        .redeem-code button {
+            padding: 10px;
+            width: 110px;
+            border-radius: 3px;
+            border: 1px solid rgba(122, 176, 195, 0.331);
+            background: rgb(72, 96, 219);
+            color: rgb(241, 241, 241);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .redeem-box2 h2 {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            position: relative;
+            font-family: Helvetica, Arial, sans-serif;
+
+        }
+
+        .redeem-box2 h2::before {
+            content: "";
+            display: block;
+            height: 20px;
+            width: 5px;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            background-color: blue;
+        }
+
+        .redeem-box2 table {
+            width: 100%;
+            border-spacing: 0;
+        }
+
+        .redeem-box2 table th {
+            text-align: start;
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            background-color: rgb(243, 245, 248);
+        }
+
+        .redeem-box3 {
+            margin-top: 130px;
+        }
+
+        .redeem-box3-content {
+            flex-direction: column;
+            margin: auto;
+        }
+
+        .redeem-box3-content img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        .redeem-box3-content p {
+            font-size: 20px;
+            color: rgb(127, 140, 153);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="flex-disp">
+        <div class="nav-left">
+            <img src="Avica Images/logo.svg" alt="">
+        </div>
+        <div class="nav-right flex-disp">
+            <div class="web-app flex-disp">
+                <img src="Avica Images/world_icon.svg">
+                Open web app (beta)
+            </div>
+            <button class="download-btn flex-disp">
+                <img src="Avica Images/install.svg">
+                Download
+            </button>
+            <img src="https://console.avica.link/static/media/bell-icon.bcd7db9348fe107becd1e799464bca38.svg">
+            <div class="user-icon flex-disp">
+                <div class="flex-disp">A</div>
+                <div class="expand-more flex-disp">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="arrow">
+                        <g id="Frame">
+                            <path id="Vector"
+                                d="M8.00028 8.7809L11.3001 5.48104L12.2429 6.42384L8.00028 10.6665L3.75761 6.42384L4.70041 5.48104L8.00028 8.7809Z"
+                                fill="#7F8C99"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container flex-disp">
+
+        <!-- ------------- Side Bar ------------- -->
+
+        <div class="side-bar">
+            <a href="index.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/home.b81a00607916a8b060aadd0fdf2e974e.svg">
+                <span>Home</span>
+            </a>
+            <a href="profile.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/profile.89e93ecd0d8cd17e98d5adc7e20a86c8.svg">
+                <span>My Profile</span>
+            </a>
+            <a href="license.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/manage-sub.217f11aaa45f6232fd35750ea086d271.svg">
+                <span>Manage Sub</span>
+            </a>
+            <a href="billing.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/billing.bf3d4d02b552d04dbedec67a7849645c.svg">
+                <span>Billing</span>
+            </a>
+            <a href="redeem-code.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/redeem-code.48fee4fb0c35b0c962d84fbaa7c1c249.svg">
+                <span>Redeem Code</span>
+            </a>
+            <a href="sessions.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/sessions.0d7cfe95a9cfbd8aa72b86e42b16fdb4.svg">
+                <span>Sessions</span>
+            </a>
+            <a href="devices.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/devices.a1639f58bc994bfd1353515092f64777.svg">
+                <span>Devices</span>
+            </a>
+            <a href="security.html" class="side-bar-item flex-disp">
+                <img src="https://console.avica.link/static/media/security.e6363b08f1e275119f7fe0cd4c3447d7.svg">
+                <span>Security</span>
+            </a>
+        </div>
+
+        <!-- ------------- Main Content ------------- -->
+
+        <div class="content redeem-content">
+            <div class="redeem-box1 flex-disp">
+                <div class="red-member flex-disp">
+                    <img src="https://console.avica.link/static/media/star-left.76ea91c7f499767d15cc681df9823aff.svg">
+                    <p>Redeem Membership</p>
+                    <img src="https://console.avica.link/static/media/star-right.7ac317ec2c662f9c9a2d411bb7874d68.svg">
+                </div>
+                <div class="redeem-code flex-disp">
+                    <input type="text" placeholder="Please Enter your redemption code">
+                    <button>Submit</button>
+                </div>
+            </div>
+            <div class="redeem-box2">
+                <h2>Redeem History</h2>
+                <table>
+                    <colgroup>
+                        <col style="width: 150px;">
+                        <col style="width: 150px;">
+                        <col style="width: 150px;">
+                        <col style="width: 250px;">
+                        <col style="width: 150px;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>Date</th>
+                            <th>Code</th>
+                            <th>Membership Type</th>
+                            <th>Membership Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="redeem-box3">
+                <div class="redeem-box3-content flex-disp">
+                    <img src="https://console.avica.link/static/media/devices-empty.fc453700502bf1abd2515e60d38ebddf.svg">
+                    <p>No data</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
