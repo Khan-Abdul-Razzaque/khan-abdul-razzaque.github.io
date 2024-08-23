@@ -1,0 +1,25 @@
+.tabs {
+    gap: 10px;
+    overflow: auto;
+    text-wrap: nowrap;
+    scrollbar-width: none;
+    padding: 15px 0;
+    height: fit-content;
+    position: sticky;
+    top: var(--navbar-height);
+    background-color: var(--bg-blackish);
+    z-index: 5;
+}
+
+.tab {
+    padding: 8px 15px;
+    border-radius: 7px;
+    background-color: rgb(40, 40, 40);
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    user-select: none;
+}
+
+.tab:not(.white-tab):hover {
+    background-color: rgb(61, 61, 61);
+}

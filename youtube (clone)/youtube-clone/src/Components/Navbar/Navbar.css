@@ -1,0 +1,131 @@
+.nav-bar {
+    height: var(--navbar-height);
+    background-color: var(--bg-blackish);
+    padding: 5px 20px;
+    position: sticky;
+    top: 0;
+    z-index: var(--layer-4);
+    user-select: none;
+    border-bottom: 2px solid rgb(36, 47, 49);
+}
+
+.nav-sec {
+    gap: 20px;
+}
+
+#ytb-logo {
+    width: 100px;
+}
+
+#region {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: -15px;
+    font-size: 11px;
+}
+
+.search {
+    border: 1px solid #373737;
+    border-radius: 100vw;
+    border: 2px solid rgb(61, 61, 61);
+    overflow: hidden;
+    background-color: var(--bg-blackish);
+}
+
+.search-box {
+    /* gap: 5px; */
+    height: 100%;
+}
+
+
+.search-box input {
+    width: 550px;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    color: rgb(206, 206, 206);
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+#input-box::placeholder {
+    color: rgb(163, 163, 163);
+}
+
+.search-icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    background-color: rgb(42, 42, 42);
+    cursor: pointer;
+}
+
+.image-div {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.image-div:not(.user):hover {
+    background-color: rgb(48, 48, 48);
+    border: 2px solid rgb(80, 80, 80);
+}
+
+.user {
+    height: 45px;
+    width: 45px;
+    border: 1px solid rgb(121, 170, 172);
+    background-color: rgb(58, 73, 72);
+    overflow: hidden;
+    position: relative;
+}
+
+.user::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.user img {
+    object-position: 50% 11px;
+    transform: scale(2.3);
+}
+
+#user-profile {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-size: cover;
+    background-size: 50px;
+}
+
+@media (max-width: 1250px) {
+
+    .nav-sec-3 > :nth-child(1),
+    .nav-sec-3 > :nth-child(2),
+    .nav-sec-2 > :nth-child(2) {
+        display: none;
+    }
+
+    .nav-sec-2 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 75px;
+    }
+
+    .search-box input {
+        transition: all .3s ease-in-out;
+        max-width: 500px;
+        padding-left: 0;
+        width: 0;
+    }
+
+    .search-box .expandSearchBox {
+        padding-left: 15px;
+        width: calc(100vw - 330px);
+    }
+}

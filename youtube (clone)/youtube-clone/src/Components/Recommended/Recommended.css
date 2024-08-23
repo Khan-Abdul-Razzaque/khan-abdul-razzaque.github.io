@@ -1,0 +1,62 @@
+.recommended {
+    flex-basis: 30%;
+    /* flex-grow: 1; */
+}
+
+.videoCard {
+    display: flex;
+    margin-bottom: 7px;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: background-color .5s ease-out, border .5s ease-out;
+}
+
+.videoCard:hover {
+    background-color: rgb(38, 44, 46);
+    border-color: rgb(64, 74, 78);
+}
+
+.videoCard .rec-thumbnail {
+    flex-basis: 45%;
+    display: flex;
+    position: relative;
+}
+
+.videoCard .rec-thumbnail img {
+    width: 100%;
+    border-radius: 7px;
+}
+
+.videoCard .videoInfo {
+    flex-basis: 53%;
+}
+
+.videoInfo p:first-child {
+    font-size: 15px;
+    color: rgb(224, 224, 224);
+    max-height: 40px;
+    margin-bottom: 7px;
+    overflow: hidden;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.videoInfo p {
+    font-size: 14px;
+    color: rgb(159, 159, 159);
+    font-weight: 500;
+}
+
+@media (max-width: 500px) {
+    .videoCard {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+
+    .rec-thumbnail {
+        margin-bottom: 15px;
+    }
+}

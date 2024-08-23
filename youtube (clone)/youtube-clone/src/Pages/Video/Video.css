@@ -1,0 +1,15 @@
+.videoPlayPage {
+    /* border: 3px solid white; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 15px 28px;
+    width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .videoPlayPage {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+}

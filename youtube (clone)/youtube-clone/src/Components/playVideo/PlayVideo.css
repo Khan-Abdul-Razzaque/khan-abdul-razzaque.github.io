@@ -1,0 +1,329 @@
+.playVideo {
+    flex-basis: 69%;
+    /* flex-grow: 1; */
+}
+
+.playVideo hr {
+    width: 100%;
+    border: 0;
+    height: 2px;
+    background-color: rgb(38 38 38);
+    margin: 0;
+}
+
+.playVideo iframe {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 15px;
+    height: 37.5vw;
+    flex: 100%;
+    border-radius: 20px;
+    border: 2px solid rgb(118, 118, 118);
+    box-shadow: 0 0 10px 0 rgb(153, 153, 153);
+}
+
+.playVideo h3 {
+    font-size: 17px;
+    color: rgb(218, 218, 218);
+    margin-bottom: 7px;
+    padding: 0 15px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.playVideo > p {
+    font-size: 13px;
+    color: rgb(189, 189, 189);
+    margin-bottom: 10px;
+    padding: 0 15px;
+}
+
+.playVideo > p .moreDetail {
+    padding: 5px 0px;
+    line-height: 1;
+    margin-left: 5px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+}
+
+.channel-detail {
+    padding: 0 15px;
+    margin: 15px 0;
+}
+
+.channel-detail > div > div > div {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid rgb(121, 170, 172);
+    position: relative;
+}
+
+.channel-detail > div > div > div::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.channel-detail div div img {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(58, 73, 72);
+    object-fit: cover;
+    object-position: 50% 8.5px;
+    transform: scale(2);
+}
+
+.channel-detail div p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.channel-detail div p span {
+    font-size: 13px;
+    color: rgb(189, 189, 189);
+}
+
+.channel-detail button {
+    border: 0;
+    outline: 0;
+    background-color: rgb(190, 0, 0);
+    border-radius: 100vw;
+    padding: 5px 15px;
+    font-size: 17px;
+    color: white;
+    font-weight: 700;
+    transition: background-color .1s ease-in-out;
+}
+
+.channel-detail button:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+.action {
+    padding: 0 15px;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.action button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 20px;
+    border-radius: 100vw;
+    background-color: rgb(58, 58, 58);
+    border: 0;
+    outline: 0;
+    font-size: 22px;
+    color: rgb(191, 191, 191);
+    transition: background-color .1s ease-in-out;
+}
+
+.action button span {
+    font-size: 14px;
+}
+
+.action div {
+    display: flex;
+    align-items: center;
+}
+
+.action div > :nth-child(1) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 2px solid rgb(79, 79, 79);
+    padding-right: 7px;
+}
+
+.action div > :nth-child(2) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 7px;
+}
+
+.commnet-container {
+    padding: 0 15px;
+}
+
+.comment-count {
+    margin: 15px 0 0;
+    align-items: center;
+    gap: 20px;
+}
+
+.sort-comments {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.sort-comments button {
+    padding: 7px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 100vw;
+    background-color: rgb(58, 58, 58);
+    color: rgb(211, 211, 211);
+    font-size: 17px;
+    transition: background-color .1s ease-in-out;
+}
+
+.sort-comments button:hover,
+.action button:hover {
+    background-color: rgb(79, 79, 79);
+}
+
+.add-comment {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.add-comment div,
+.comment-card > div:first-child div {
+    height: 40px;
+    width: 40px;
+    border-radius: 100vw;
+    background-color: rgb(58, 73, 72);
+    overflow: hidden;
+}
+
+.add-comment img,
+.comment-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.add-comment div {
+    border: 1px solid rgb(121, 170, 172);
+    position: relative;
+}
+
+.add-comment div::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.add-comment img {
+    object-position: 50% 8.5px;
+    transform: scale(2);
+}
+
+.add-comment input {
+    padding: 10px;
+    flex-grow: 1;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+}
+
+.hide-comments {
+    text-align: center;
+    font-size: 23px;
+    line-height: 0;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+    display: none;
+    border: 1px solid rgb(60, 60, 60);
+}
+
+.comments {
+    margin-left: 50px;
+}
+
+.comment-card {
+    margin: 15px 0 30px;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.comment-card > div :first-child p:first-child {
+    font-size: 14px;
+    color: rgb(154, 154, 154);
+    margin-bottom: 5px;
+}
+
+.commentText {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: rgb(223, 223, 223);
+    width: 100%;
+}
+
+.comment-action button {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    font-size: 25px;
+    color: rgb(146, 146, 146);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-action button:first-child {
+    margin-right: 50px;
+}
+
+.comment-action button:first-child span {
+    font-size: 16px;
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    .playVideo iframe {
+        max-width: 100%;
+        width: 100%;
+        height: 55vw;
+        border-radius: 0;
+    }
+
+    .playVideo h3,
+    .playVideo > p,
+    .channel-detail,
+    .action,
+    .commnet-container {
+        padding: 0;
+    }
+
+    .commnet-container {
+        margin-bottom: 20px;
+    }
+
+    .comments {
+        overflow: hidden;
+        height: 0;
+        width: fit-content;
+        margin-left: 10px;
+    }
+
+    .commentText {
+        word-break: break-all;
+    }
+
+    .hide-comments {
+        display: block;
+    }
+}
